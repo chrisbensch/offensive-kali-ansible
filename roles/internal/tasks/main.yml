@@ -1,5 +1,5 @@
 ---
-- name: apt tasks 
+- name: apt tasks
   become: True
   ansible.builtin.import_tasks: apt.yml
 

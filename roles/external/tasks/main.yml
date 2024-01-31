@@ -1,8 +1,8 @@
 ---
-- name: apt tasks 
+- name: apt tasks
   become: True
   ansible.builtin.import_tasks: apt.yml
-  
+
 - name: Install Golang Tools
   become: True
   ansible.builtin.import_tasks: golang.yml
@@ -10,4 +10,3 @@
 - name: Install Tools from GitHub
   become: True
   ansible.builtin.import_tasks: git.yml
-
