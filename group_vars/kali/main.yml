@@ -42,7 +42,7 @@ kali_packages:
   - parallel
   - powershell-empire
   - python3-setuptools
-  - python3-distintils
+  - python3-distutils
   - python3-openssl
   - python3-pip
   - python3-venv
