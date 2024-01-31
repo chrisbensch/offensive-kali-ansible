@@ -16,6 +16,7 @@ kali_packages:
   - gdb
   - gdbserver
   - gem
+  - git
   - gobuster
   - golang
   - jq
@@ -40,6 +41,7 @@ kali_packages:
   - neo4j
   - npm
   - parallel
+  - pipx
   - powershell-empire
   - python3-setuptools
   - python3-distutils
@@ -87,6 +89,7 @@ pip_packages:
 gem_packages:
   - pass-station
   - wpscan
+  - evil-winrm
 
 # Group ownership for the tools that are installed directly to /opt
 group: kali
