@@ -41,14 +41,13 @@ kali_packages:
   - npm
   - parallel
   - powershell-empire
-  - python-setuptools
   - python3-setuptools
   - python3-distintils
   - python3-openssl
   - python3-pip
   - python3-venv
-  - python3.9-dev
-  - python3.9-full
+  - python3-dev
+  - python3-full
   - seclists
   - tk-dev
   - xz-utils
