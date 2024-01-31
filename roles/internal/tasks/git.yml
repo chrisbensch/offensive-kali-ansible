@@ -14,8 +14,6 @@
         label: "{{ item.dir_name }}"
 
 - name: Install github tools
-  block:
-    - name: Install Github Tools
   ansible.builtin.git:
     repo: "{{ item.repo }}"
     dest: "{{ item.path }}/{{ item.dir_name }}"
