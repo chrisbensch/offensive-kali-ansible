@@ -16,7 +16,8 @@
 
 - name: Source Path and Download pipx
   become_user: "{{ zsh_user }}"
-  ansible.builtin.shell: source .zshrc && pipx install witnessme --force
+  #ansible.builtin.shell: source .zshrc && pipx install witnessme --force
+  ansible.builtin.shell: pipx install witnessme --force
   args:
     executable: /bin/zsh
 
