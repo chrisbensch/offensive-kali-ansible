@@ -1,6 +1,6 @@
 # Main Playbook
 ---
-- hosts: kali
+- hosts: localhost
   roles:
     - common
     - external
