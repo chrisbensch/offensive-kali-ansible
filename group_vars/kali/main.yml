@@ -349,7 +349,7 @@ i_git_repos:
 
   # pip install
 pip_install_common:
-  - { path: "/opt/osint-tools/DumpsterDiver" }
+#  - { path: "/opt/osint-tools/DumpsterDiver" }
   - { path: "/opt/web-tools/jwt_tool" }
 
 pip_install_external:
