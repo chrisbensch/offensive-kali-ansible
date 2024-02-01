@@ -22,7 +22,7 @@
         force: true
       loop: "{{ git_repos }}"
       loop_control:
-        label: "{{item.repo}}"
+        label: "{{ item.repo }}"
 
 - name: Set new file privileges -- recursive
   ansible.builtin.file:
@@ -30,9 +30,9 @@
     path: "{{ item.path }}/{{ item.dir_name }}"
     mode: 0755
     recurse: yes
-  loop: "{{git_repos}}"
+  loop: "{{ git_repos }}"
   loop_control:
-    label: "{{item.repo}}"
+    label: "{{ item.repo }}"
 
 # Install Package dependencies
 - name: Install package dependencies

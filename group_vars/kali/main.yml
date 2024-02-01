@@ -208,8 +208,6 @@ git_repos:
       repo: "https://github.com/averagesecurityguy/scripts.git",
     }
 
-    # External Only git repos
-e_git_repos:
   - {
       path: "/opt",
       dir_name: "knockpy",
@@ -243,8 +241,6 @@ e_git_repos:
       repo: "https://github.com/1N3/BlackWidow.git",
     }
 
-  # Internal only git repos
-i_git_repos:
   - {
       path: "/opt",
       dir_name: "bloodhound",
