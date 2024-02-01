@@ -12,6 +12,7 @@ kali_packages:
   - docker-compose
   - dnsutils
   - eyewitness
+  - feroxbuster
   - ffuf
   - gdb
   - gdbserver
@@ -19,7 +20,10 @@ kali_packages:
   - git
   - gobuster
   - golang
+  - jd-gui
+  - joomscan
   - jq
+  - keepassxc
   - libffi-dev
   - libpcap-dev
   - libssl-dev
@@ -43,6 +47,7 @@ kali_packages:
   - parallel
   - pipx
   - powershell-empire
+  - putty-tools
   - python3-setuptools
   - python3-distutils
   - python3-openssl

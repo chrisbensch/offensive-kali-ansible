@@ -12,25 +12,24 @@
       loop: "{{ i_git_repos }}"
       loop_control:
         label: "{{ item.dir_name }}"
+    - name: Install github tools
+      ansible.builtin.git:
+        repo: "{{ item.repo }}"
+        dest: "{{ item.path }}/{{ item.dir_name }}"
+        force: true
+        loop: "{{ i_git_repos }}"
+        loop_control:
+          label: "{{item.repo}}"
 
-- name: Install github tools
-  ansible.builtin.git:
-    repo: "{{ item.repo }}"
-    dest: "{{ item.path }}/{{ item.dir_name }}"
-    force: true
-    loop: "{{ i_git_repos }}"
-    loop_control:
-      label: "{{item.repo}}"
-
-- name: Set new file privileges -- recursive
-  ansible.builtin.file:
-    owner: "{{ group }}"
-    path: "{{ item.path }}/{{ item.dir_name }}"
-    mode: 0755
-    recurse: yes
-  loop: "{{i_git_repos}}"
-  loop_control:
-    label: "{{item.repo}}"
+    - name: Set new file privileges -- recursive
+      ansible.builtin.file:
+        owner: "{{ group }}"
+        path: "{{ item.path }}/{{ item.dir_name }}"
+        mode: 0755
+        recurse: yes
+      loop: "{{i_git_repos}}"
+      loop_control:
+        label: "{{item.repo}}"
 
 # Install Package dependencies
 - name: Install package dependencies
