@@ -342,8 +342,8 @@ pip_install_common:
   - { path: "/opt/jwt_tool" }
 
 pip_install_external:
-  - { path: "/opt/osint-tools/knockpy" }
-  - { path: "/opt/osint-tools/msdorkdump" }
+  - { path: "/opt/knockpy" }
+  - { path: "/opt/msdorkdump" }
 
 pip_install_internal:
   - { path: "/opt/certi" }
