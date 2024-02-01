@@ -11,7 +11,7 @@ kali_packages:
   - docker.io
   - docker-compose
   - dnsutils
-  - exiftool
+#  - exiftool
   - eyewitness
   - feroxbuster
   - ffuf
