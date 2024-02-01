@@ -162,7 +162,6 @@ git_repos:
       dir_name: "payload-generator",
       repo: "https://github.com/g0tmi1k/msfpc.git",
     }
-
   - {
       path: "/opt/web-tools",
       dir_name: "CMSmap",
@@ -198,7 +197,6 @@ git_repos:
       dir_name: "SleuthQL",
       repo: "https://github.com/RhinoSecurityLabs/SleuthQL.git",
     }
-
   - {
       path: "/opt/network-tools",
       dir_name: "nlzr",
@@ -210,7 +208,7 @@ git_repos:
       repo: "https://github.com/averagesecurityguy/scripts.git",
     }
 
-  # External Only git repos
+    # External Only git repos
 e_git_repos:
   - {
       path: "/opt/recon-tools",
