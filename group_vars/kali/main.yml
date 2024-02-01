@@ -241,11 +241,7 @@ e_git_repos:
       dir_name: "Goblyn",
       repo: "https://github.com/loseys/Goblyn.git",
     }
-  - {
-      path: "/opt/web-tools",
-      dir_name: "VHostScan",
-      repo: "VHostScan https://github.com/codingo/VHostScan.git",
-    }
+
   - {
       path: "/opt/web-tools",
       dir_name: "BlackWidow",

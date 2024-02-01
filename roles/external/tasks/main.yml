@@ -1,4 +1,7 @@
 ---
+- name: import vars
+  ansible.builtin.include_vars: ../../group_vars/kali/main.yml
+  
 - name: apt tasks
   become: True
   ansible.builtin.import_tasks: apt.yml
