@@ -84,6 +84,7 @@ pip_packages:
   - pywhat
   - requests
   - unicorn
+  - certipy-ad
 
 # Gem Packages -- still needs added as task
 gem_packages:
@@ -251,11 +252,7 @@ git_repos:
       dir_name: "certi",
       repo: "https://github.com/zer1t0/certi.git",
     }
-  - {
-      path: "/opt",
-      dir_name: "certipy",
-      repo: "https://github.com/ly4k/Certipy.git",
-    }
+
   - {
       path: "/opt",
       dir_name: "PCredz",
@@ -336,10 +333,9 @@ git_repos:
 pip_install_common:
   #  - { path: "/opt/osint-tools/DumpsterDiver" }
   - { path: "/opt/jwt_tool" }
-  - { path: "/opt/knock" }
+  - { path: "/opt/knockpy" }
   - { path: "/opt/msdorkdump" }
   - { path: "/opt/certi" }
-  - { path: "/opt/certipy" }
   - { path: "/opt/DumpsterDiver" }
 #  - { path: "/opt/pywhisker" }
 
