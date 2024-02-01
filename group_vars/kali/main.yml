@@ -340,7 +340,7 @@ i_git_repos:
 pip_install_common:
   #  - { path: "/opt/osint-tools/DumpsterDiver" }
   - { path: "/opt/jwt_tool" }
-  - { path: "/opt/knockpy" }
+  - { path: "/opt/knock" }
   - { path: "/opt/msdorkdump" }
   - { path: "/opt/certi" }
   - { path: "/opt/certipy" }
