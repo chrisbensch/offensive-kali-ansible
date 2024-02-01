@@ -212,11 +212,6 @@ git_repos:
 e_git_repos:
   - {
       path: "/opt/recon-tools",
-      dir_name: "spiderfoot",
-      repo: "https://github.com/smicallef/spiderfoot.git",
-    }
-  - {
-      path: "/opt/recon-tools",
       dir_name: "knockpy",
       repo: "https://github.com/guelfoweb/knock.git",
     }
@@ -361,9 +356,7 @@ python_setup_common:
 
 # python setup
 python_setup_external:
-  - { path: "/opt/web-tools/VHostScan" }
   - { path: "/opt/web-tools/Goblyn" }
-  - { path: "/opt/network-tools/spiderfoot" }
   - { path: "/opt/network-tools/censys-subdomain-finder" }
 
 # python setup
