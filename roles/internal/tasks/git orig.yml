@@ -9,20 +9,17 @@
         mode: 0755
         path: "{{ item.path }}/{{ item.dir_name }}"
         state: directory
-      loop: "{{ e_git_repos }}"
+      loop: "{{ i_git_repos }}"
       loop_control:
         label: "{{ item.dir_name }}"
-
-- name: Install github tools
-  block:
-    - name: Install Github Tools
+    - name: Install github tools
       ansible.builtin.git:
         repo: "{{ item.repo }}"
         dest: "{{ item.path }}/{{ item.dir_name }}"
         force: true
-      loop: "{{ e_git_repos }}"
-      loop_control:
-        label: "{{item.repo}}"
+        loop: "{{ i_git_repos }}"
+        loop_control:
+          label: "{{item.repo}}"
 
     - name: Set new file privileges -- recursive
       ansible.builtin.file:
@@ -30,7 +27,7 @@
         path: "{{ item.path }}/{{ item.dir_name }}"
         mode: 0755
         recurse: yes
-      loop: "{{e_git_repos}}"
+      loop: "{{i_git_repos}}"
       loop_control:
         label: "{{item.repo}}"
 
@@ -41,7 +38,7 @@
       ansible.builtin.command: python3 setup.py install
       args:
         chdir: "{{item.path}}"
-      loop: "{{python_setup_external}}"
+      loop: "{{python_setup_internal}}"
       loop_control:
         label: "{{item.path}}"
 
@@ -49,6 +46,6 @@
       ansible.builtin.command: python3 -m pip install -r requirements.txt
       args:
         chdir: "{{item.path}}"
-      loop: "{{pip_install_external}}"
+      loop: "{{pip_install_internal}}"
       loop_control:
         label: "{item.path}"
