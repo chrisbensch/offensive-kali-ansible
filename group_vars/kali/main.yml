@@ -331,7 +331,7 @@ git_repos:
 
   # pip install
 pip_install_common:
-#  #  - { path: "/opt/osint-tools/DumpsterDiver" }
+  - { path: "/opt/DumpsterDiver" }
 #  - { path: "/opt/jwt_tool" }
 #  - { path: "/opt/knockpy" }
 #  - { path: "/opt/msdorkdump" }
