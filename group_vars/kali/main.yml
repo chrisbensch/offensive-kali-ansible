@@ -348,7 +348,7 @@ pip_install_external:
 pip_install_internal:
   - { path: "/opt/certi" }
   - { path: "/opt/certipy" }
-  - { path: "/opt/osint-tools/DumpsterDiver" }
+  - { path: "/opt/DumpsterDiver" }
 
 # python setup
 python_setup_common:
@@ -357,7 +357,7 @@ python_setup_common:
 # python setup
 python_setup_external:
   - { path: "/opt/Goblyn" }
-  - { path: "/opt/censys-subdomain-finder" }
+#  - { path: "/opt/censys-subdomain-finder" }
 
 # python setup
 python_setup_internal:
