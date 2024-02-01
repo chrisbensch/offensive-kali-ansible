@@ -345,11 +345,12 @@ pip_install_common:
   - { path: "/opt/certi" }
   - { path: "/opt/certipy" }
   - { path: "/opt/DumpsterDiver" }
+  - { path: "/opt/pywhisker" }
 
 # python setup
 python_setup_common:
   - { path: "/opt/dirsearch" }
-  - { path: "/opt/pywhisker" }
+#  - { path: "/opt/pywhisker" }
 
 # GoLang Tools -- Only on external
 go_tools:
