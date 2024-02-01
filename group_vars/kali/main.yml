@@ -62,15 +62,9 @@ kali_packages:
   - zlib1g-dev
   - zsh
   - zsh-syntax-highlighting
-
-# external only apt related packages
-e_apt_packages:
   - assetfinder
   - spiderfoot
   - sublist3r
-
-# internal only apt related packages
-i_apt_packages:
   - bloodhound
   - nbtscan-unixwiz
 
@@ -345,12 +339,8 @@ i_git_repos:
 pip_install_common:
   #  - { path: "/opt/osint-tools/DumpsterDiver" }
   - { path: "/opt/jwt_tool" }
-
-pip_install_external:
   - { path: "/opt/knockpy" }
   - { path: "/opt/msdorkdump" }
-
-pip_install_internal:
   - { path: "/opt/certi" }
   - { path: "/opt/certipy" }
   - { path: "/opt/DumpsterDiver" }
@@ -358,14 +348,7 @@ pip_install_internal:
 # python setup
 python_setup_common:
   - { path: "/opt/dirsearch" }
-
-# python setup
-python_setup_external:
   - { path: "/opt/Goblyn" }
-#  - { path: "/opt/censys-subdomain-finder" }
-
-# python setup
-python_setup_internal:
   - { path: "/opt/pywhisker" }
 
 # GoLang Tools -- Only on external
@@ -373,10 +356,7 @@ go_tools:
   - { tool: "hakrawler", repo: "github.com/hakluke/hakrawler@latest" }
   - { tool: "shhgit", repo: "github.com/eth0izzle/shhgit@latest" }
   - { tool: "gitleaks", repo: "github.com/zricethezav/gitleaks.git@latest" }
-  - {
-      tool: "trufflehog",
-      repo: "github.com/trufflesecurity/trufflehog.git@latest",
-    }
+  - { tool: "trufflehog", repo: "github.com/trufflesecurity/trufflehog.git@latest" }
   - { tool: "CloudBrute", repo: "github.com/0xsha/CloudBrute@latest" }
   - { tool: "waybackurls", repo: "github.com/tomnomnom/waybackurls@latest" }
   - { tool: "subjack", repo: "github.com/haccer/subjack@latest" }

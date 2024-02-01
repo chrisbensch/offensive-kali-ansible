@@ -3,5 +3,6 @@
 - hosts: localhost
   roles:
     - common
-    - external
-    - internal
+#    - external
+#    - internal
+# maybe add a forensics role
