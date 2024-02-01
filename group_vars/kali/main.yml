@@ -11,6 +11,7 @@ kali_packages:
   - docker.io
   - docker-compose
   - dnsutils
+  - exiftool
   - eyewitness
   - feroxbuster
   - ffuf
@@ -348,7 +349,6 @@ pip_install_common:
 # python setup
 python_setup_common:
   - { path: "/opt/dirsearch" }
-  - { path: "/opt/Goblyn" }
   - { path: "/opt/pywhisker" }
 
 # GoLang Tools -- Only on external
