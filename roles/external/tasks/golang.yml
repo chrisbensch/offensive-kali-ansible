@@ -5,6 +5,6 @@
   ansible.builtin.command: go install
   args:
     chdir: "{{ item.path }}"
-  loop: "{{go_tools}}"
+  loop: "{{ go_tools }}"
   loop_control:
-    label: "{{item.path}}"
+    label: "{{ item.path }}"
