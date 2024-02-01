@@ -331,17 +331,17 @@ git_repos:
 
   # pip install
 pip_install_common:
-  #  - { path: "/opt/osint-tools/DumpsterDiver" }
-  - { path: "/opt/jwt_tool" }
-  - { path: "/opt/knockpy" }
-  - { path: "/opt/msdorkdump" }
-  - { path: "/opt/certi" }
-  - { path: "/opt/DumpsterDiver" }
+#  #  - { path: "/opt/osint-tools/DumpsterDiver" }
+#  - { path: "/opt/jwt_tool" }
+#  - { path: "/opt/knockpy" }
+#  - { path: "/opt/msdorkdump" }
+#  - { path: "/opt/certi" }
+#  - { path: "/opt/DumpsterDiver" }
 #  - { path: "/opt/pywhisker" }
 
 # python setup
 python_setup_common:
-  - { path: "/opt/dirsearch" }
+#  - { path: "/opt/dirsearch" }
 #  - { path: "/opt/pywhisker" }
 
 # GoLang Tools -- Only on external
