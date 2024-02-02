@@ -17,6 +17,7 @@ kali_packages:
   - gdb
   - gdbserver
   - gem
+  - ghidra
   - git
   - gobuster
   - golang
@@ -58,6 +59,7 @@ kali_packages:
   - pipx
   - rust-all
   - seclists
+  - starkiller
   - tk-dev
   - xz-utils
   - zlib1g-dev
@@ -100,23 +102,23 @@ user: kali
 git_repos:
   - {
       path: "/opt",
-      dir_name: "checkpwnedemails",
-      repo: "https://github.com/Techno-Hwizrdry/checkpwnedemails.git",
+      dir_name: "ntlm_theft",
+      repo: "https://github.com/Greenwolf/ntlm_theft.git",
     }
   - {
       path: "/opt",
-      dir_name: "google-dork-scan",
-      repo: "https://github.com/IvanGlinkin/Fast-Google-Dorks-Scan.git",
+      dir_name: "sharpcollection",
+      repo: "https://github.com/Flangvik/SharpCollection.git",
     }
   - {
       path: "/opt",
-      dir_name: "github-search",
-      repo: "https://github.com/gwen001/github-search.git",
+      dir_name: "chisel",
+      repo: "https://github.com/jpillora/chisel.git",
     }
   - {
       path: "/opt",
-      dir_name: "SimplyEmail",
-      repo: "https://github.com/SimplySecurity/SimplyEmail.git",
+      dir_name: "krbrelayx",
+      repo: "https://github.com/dirkjanm/krbrelayx.git",
     }
   - {
       path: "/opt",
@@ -130,13 +132,13 @@ git_repos:
     }
   - {
       path: "/opt",
-      dir_name: "gitGraber",
-      repo: "https://github.com/hisxo/gitGraber.git",
+      dir_name: "coercedpotato",
+      repo: "https://github.com/sokaRepo/CoercedPotatoRDLL.git",
     }
   - {
       path: "/opt",
-      dir_name: "changeme",
-      repo: "https://github.com/ztgrace/changeme",
+      dir_name: "seclists",
+      repo: "https://github.com/danielmiessler/SecLists.git",
     }
   - {
       path: "/opt",
@@ -145,49 +147,30 @@ git_repos:
     }
   - {
       path: "/opt",
-      dir_name: "hash-identifier",
-      repo: "https://github.com/HashPals/Name-That-Hash.git",
+      dir_name: "certipy",
+      repo: "https://github.com/ly4k/Certipy.git",
     }
   - {
       path: "/opt",
-      dir_name: "Hasher",
-      repo: "https://github.com/FortyNorthSecurity/Hasher.git",
+      dir_name: "ysoserial",
+      repo: "https://github.com/frohoff/ysoserial.git",
     }
   - {
       path: "/opt",
-      dir_name: "findsploit",
-      repo: "https://github.com/1N3/Findsploit.git",
+      dir_name: "ysoserial.net",
+      repo: "https://github.com/pwntester/ysoserial.net.git",
     }
   - {
       path: "/opt",
-      dir_name: "payload-generator",
-      repo: "https://github.com/g0tmi1k/msfpc.git",
+      dir_name: "droopescan",
+      repo: "https://github.com/SamJoan/droopescan.git",
     }
   - {
       path: "/opt",
       dir_name: "CMSmap",
       repo: "https://github.com/dionach/CMSmap.git",
     }
-  - {
-      path: "/opt",
-      dir_name: "dirsearch",
-      repo: "https://github.com/maurosoria/dirsearch.git",
-    }
-  - {
-      path: "/opt",
-      dir_name: "quieter-firefox",
-      repo: "https://bitbucket.org/mrbbking/quieter-firefox.git",
-    }
-  - {
-      path: "/opt",
-      dir_name: "Token-Reverser",
-      repo: "https://github.com/dariusztytko/token-reverser.git",
-    }
-  - {
-      path: "/opt",
-      dir_name: "JSscanner",
-      repo: "https://github.com/dark-warlord14/JSScanner.git",
-    }
+
   - {
       path: "/opt",
       dir_name: "jwt_tool",
@@ -211,46 +194,24 @@ git_repos:
 
   - {
       path: "/opt",
-      dir_name: "knockpy",
-      repo: "https://github.com/guelfoweb/knock.git",
+      dir_name: "mimipenguin",
+      repo: "https://github.com/huntergregal/mimipenguin.git",
     }
   - {
       path: "/opt",
-      dir_name: "censys-subdomain-finder",
-      repo: "https://github.com/christophetd/censys-subdomain-finder.git",
+      dir_name: "responder",
+      repo: "https://github.com/lgandx/Responder.git",
     }
   - {
       path: "/opt",
-      dir_name: "msdorkdump",
-      repo: "https://github.com/dievus/msdorkdump.git",
-    }
-  - {
-      path: "/opt",
-      dir_name: "Turbolist3r",
-      repo: "https://github.com/fleetcaptain/Turbolist3r.git",
-    }
-
-  - {
-      path: "/opt",
-      dir_name: "Goblyn",
-      repo: "https://github.com/loseys/Goblyn.git",
-    }
-
-  - {
-      path: "/opt",
-      dir_name: "BlackWidow",
-      repo: "https://github.com/1N3/BlackWidow.git",
+      dir_name: "ysoserial-modified",
+      repo: "https://github.com/pimps/ysoserial-modified.git",
     }
 
   - {
       path: "/opt",
       dir_name: "bloodhound",
       repo: "https://github.com/fox-it/BloodHound.py.git",
-    }
-  - {
-      path: "/opt",
-      dir_name: "certi",
-      repo: "https://github.com/zer1t0/certi.git",
     }
 
   - {
@@ -288,11 +249,7 @@ git_repos:
       dir_name: "pyWhat-pcap",
       repo: "https://github.com/bee-san/pyWhat.git",
     }
-  - {
-      path: "/opt",
-      dir_name: "exploit-suggester",
-      repo: "https://github.com/jondonas/linux-exploit-suggester-2.git",
-    }
+
   - {
       path: "/opt",
       dir_name: "rootend",
@@ -300,7 +257,7 @@ git_repos:
     }
   - {
       path: "/opt",
-      dir_name: "LinPEAs",
+      dir_name: "peass",
       repo: "https://github.com/carlospolop/PEASS-ng.git",
     }
   - {
@@ -329,22 +286,14 @@ git_repos:
       repo: "https://github.com/AlessandroZ/BeRoot.git",
     }
 
-  # pip install
 pip_install_common:
-#  - { path: "/opt/DumpsterDiver" }
   - { path: "/opt/jwt_tool" }
-#  - { path: "/opt/knockpy" }
-#  - { path: "/opt/msdorkdump" }
-#  - { path: "/opt/certi" }
-#  - { path: "/opt/DumpsterDiver" }
-#  - { path: "/opt/pywhisker" }
 
-# python setup
+
 python_setup_common:
   - { path: "/opt/dirsearch" }
-#  - { path: "/opt/pywhisker" }
 
-# GoLang Tools -- Only on external
+
 go_tools:
   - { tool: "hakrawler", repo: "github.com/hakluke/hakrawler@latest" }
   - { tool: "shhgit", repo: "github.com/eth0izzle/shhgit@latest" }
@@ -353,6 +302,7 @@ go_tools:
   - { tool: "CloudBrute", repo: "github.com/0xsha/CloudBrute@latest" }
   - { tool: "waybackurls", repo: "github.com/tomnomnom/waybackurls@latest" }
   - { tool: "subjack", repo: "github.com/haccer/subjack@latest" }
+  - { tool: "kerbrute", repo: "github.com/ropnop/kerbrute@latest" }
 
 #binaries
 aquatone: "https://github.com/michenriksen/aquatone/releases/download/v1.7.0/aquatone_linux_amd64_1.7.0.zip"
