@@ -291,7 +291,7 @@ pip_install_common:
 
 
 python_setup_common:
-  - { path: "/opt/dirsearch" }
+  - { path: "/opt/defaultcredsearch" }
 
 
 go_tools:
