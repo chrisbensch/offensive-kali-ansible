@@ -277,6 +277,11 @@ git_repos:
     }
   - {
       path: "/opt",
+      dir_name: "Bloodhound.py",
+      repo: "https://github.com/dirkjanm/BloodHound.py.git",
+    }
+  - {
+      path: "/opt",
       dir_name: "BeRoot",
       repo: "https://github.com/AlessandroZ/BeRoot.git",
     }
