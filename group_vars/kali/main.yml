@@ -221,11 +221,6 @@ git_repos:
     }
   - {
       path: "/opt",
-      dir_name: "Pentest-Scripts",
-      repo: "https://github.com/averagesecurityguy/scripts.git",
-    }
-  - {
-      path: "/opt",
       dir_name: "PetitPotam",
       repo: "https://github.com/topotam/PetitPotam.git",
     }
