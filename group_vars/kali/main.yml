@@ -286,7 +286,7 @@ pip_install_common:
 
 
 python_setup_common:
-  - { path: "/opt/defaultcredsearch" }
+  - { path: "/opt/certipy" }
 
 
 go_tools:
