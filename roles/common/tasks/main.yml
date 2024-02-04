@@ -21,3 +21,7 @@
 - name: Install Binary Packages
   become: True
   ansible.builtin.import_tasks: binaries.yml
+
+- name: Customize QTerminal
+  become: False
+  ansible.builtin.import_tasks: qterminal.yml

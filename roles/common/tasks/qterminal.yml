@@ -1,0 +1,22 @@
+---
+- name: Update QTerminal Settings
+  ansible.builtin.blockinfile:
+    path: "{{ ansible_env.HOME }}/.config/qterminal.org/qterminal.ini"
+    backup: yes
+    block: |
+      [General]
+      AskOnExit=true
+      Borderless=false
+      FixedTabWidth=true
+      FixedTabWidthValue=500
+      HideTabBarWithOneTab=false
+      HistoryLimited=false
+      OpenNewTabRightToActiveTab=true
+      SavePosOnExit=true
+      SaveSizeOnExit=true
+      TabBarless=false
+      UseCWD=true
+      fontFamily=FiraCode
+      fontSize=10
+      highlightCurrentTerminal=true
+      showTerminalSizeHint=true
