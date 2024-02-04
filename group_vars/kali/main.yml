@@ -285,6 +285,61 @@ git_repos:
       dir_name: "BeRoot",
       repo: "https://github.com/AlessandroZ/BeRoot.git",
     }
+  - {
+      path: "/opt",
+      dir_name: "PoshKBRute",
+      repo: "https://github.com/wevans311082/PoshKPBrute.git",
+    }
+  - {
+      path: "/opt",
+      dir_name: "Covenant",
+      repo: "https://github.com/cobbr/Covenant.git",
+    }
+  - {
+      path: "/opt",
+      dir_name: "Havoc",
+      repo: "https://github.com/HavocFramework/Havoc.git",
+    }
+  - {
+      path: "/opt",
+      dir_name: "offsec-tools",
+      repo: "https://github.com/Syslifters/offsec-tools.git",
+    }
+  - {
+      path: "/opt",
+      dir_name: "Powersploit",
+      repo: "https://github.com/PowerShellMafia/PowerSploit.git",
+    }
+  - {
+      path: "/opt",
+      dir_name: "proxychains-ng",
+      repo: "https://github.com/rofl0r/proxychains-ng.git",
+    }
+  - {
+      path: "/opt",
+      dir_name: "pyKerbrute",
+      repo: "https://github.com/3gstudent/pyKerbrute.git",
+    }
+  - {
+      path: "/opt",
+      dir_name: "tplmap",
+      repo: "https://github.com/epinna/tplmap.git",
+    }
+  - {
+      path: "/opt",
+      dir_name: "Pretender",
+      repo: "https://github.com/RedTeamPentesting/pretender",
+    }
+  - {
+      path: "/opt",
+      dir_name: "Responder",
+      repo: "https://github.com/lgandx/Responder",
+    }
+  - {
+      path: "/opt",
+      dir_name: "git-dumper",
+      repo: "https://github.com/arthaud/git-dumper.git",
+    }
 
 pip_install_common:
   - { path: "/opt/jwt_tool" }
