@@ -13,7 +13,6 @@ common_kali_packages:
   - dnsutils
   - docker-compose
   - docker.io
-  - exiftool
   - eyewitness
   - feroxbuster
   - ffuf
