@@ -11,7 +11,7 @@
       FixedTabWidthValue=500
       HideTabBarWithOneTab=false
       HistoryLimited=false
-      OpenNewTabRightToActiveTab=true
+      OpenNewTabRightToActiveTab=false
       SavePosOnExit=true
       SaveSizeOnExit=true
       TabBarless=false
