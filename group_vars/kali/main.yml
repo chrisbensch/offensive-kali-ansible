@@ -71,16 +71,12 @@ common_kali_packages:
   - zsh-syntax-highlighting
 
 osint_apt_packages:
-  - build-essential
   - cargo
   - cherrytree
   - curl
   - drawing
   - exifprobe
-  - eyewitness
   - finalrecon
-  - git
-  - golang
   - instaloader
   - joplin
   - libc6-dev
@@ -89,13 +85,11 @@ osint_apt_packages:
   - libseccomp2
   - libsodium-dev
   - libsqlite3-0
-  - libsqlite3-dev
   - libssl-doc
   - libtool
   - maltego
   - metagoofil
   - nodejs
-  - npm
   - openvpn
   - osrframework
   - outguess
@@ -104,17 +98,14 @@ osint_apt_packages:
   - publicsuffix
   - python-argparse
   - python3
-  - python3-pip
   - python3-shodan
   - recon-ng
   - ruby-bundler
   - ruby-dev
   - rubygems 
   - sherlock
-  - spiderfoot
   - sqlite3-doc
   - stegosuite
-  - sublist3r
   - theharvester
   - webhttrack
   - wireshark
@@ -159,7 +150,6 @@ osint_pip_packages:
   - pillow
   - pprint
   - python-docx
-  - requests
   - requirements
   - schedule
   - shodan
@@ -434,11 +424,6 @@ osint_git_repos:
       path: "/opt",
       dir_name: "Spiderpig",
       repo: "https://github.com/hatlord/Spiderpig.git",
-    }
-  - {
-      path: "/opt",
-      dir_name: "DumpsterDiver",
-      repo: "https://github.com/securing/DumpsterDiver.git",
     }
   - {
       path: "/opt",
