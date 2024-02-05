@@ -14,7 +14,7 @@
     install_recommends: yes
     name: "{{ item }}"
     state: latest
-  loop: "{{ kali_packages }}"
+  loop: "{{ common_kali_packages }}"
 
 - name: Remove useless packages from cache
   ansible.builtin.apt:

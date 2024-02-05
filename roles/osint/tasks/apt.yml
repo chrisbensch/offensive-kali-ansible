@@ -14,7 +14,7 @@
     install_recommends: yes
     name: "{{ item }}"
     state: latest
-  loop: "{{ i_apt_packages }}"
+  loop: "{{ osint_apt_packages }}"
 
 - name: Remove useless packages from cache
   ansible.builtin.apt:

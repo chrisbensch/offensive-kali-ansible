@@ -3,7 +3,7 @@
 zsh_user: kali
 
 # common apt packages to install
-kali_packages:
+common_kali_packages:
   - assetfinder
   - awscli
   - bettercap
@@ -71,8 +71,57 @@ kali_packages:
   - zsh
   - zsh-syntax-highlighting
 
+osint_apt_packages:
+  - build-essential
+  - cargo
+  - cherrytree
+  - curl
+  - drawing
+  - exifprobe
+  - eyewitness
+  - finalrecon
+  - git
+  - golang
+  - instaloader
+  - joplin
+  - libc6-dev
+  - libpq-dev
+  - libseccomp-dev
+  - libseccomp2
+  - libsodium-dev
+  - libsqlite3-0
+  - libsqlite3-dev
+  - libssl-doc
+  - libtool
+  - maltego
+  - metagoofil
+  - nodejs
+  - npm
+  - openvpn
+  - osrframework
+  - outguess
+  - photon
+  - pkg-config
+  - publicsuffix
+  - python-argparse
+  - python3
+  - python3-pip
+  - python3-shodan
+  - recon-ng
+  - ruby-bundler
+  - ruby-dev
+  - rubygems 
+  - sherlock
+  - spiderfoot
+  - sqlite3-doc
+  - stegosuite
+  - sublist3r
+  - theharvester
+  - webhttrack
+  - wireshark
+
 # pip packages
-pip_packages:
+common_pip_packages:
   - Cython
   - certipy-ad
   - dirhunt
@@ -88,18 +137,58 @@ pip_packages:
   - requests
   - unicorn
 
+osint_pip_packages:
+  - aiohttp
+  - aiohttp_socks
+  - bs4
+  - cchardet
+  - cfscrape
+  - click
+  - dnsdumpster
+  - elasticsearch
+  - exifread
+  - fake_useragent
+  - geopy
+  - googletransx
+  - h8mail
+  - ipdb
+  - jinja2
+  - lxml
+  - numpy
+  - oauth2pip 
+  - pandas
+  - pillow
+  - pprint
+  - python-docx
+  - requests
+  - requirements
+  - schedule
+  - shodan
+  - shodan
+  - simplejson
+  - toutatis
+  - tqdm
+  - tweepy
+  - urllib3
+  - virtualenv
+  - youtube-dl
+  - yt-dlp
+
 # Gem Packages -- still needs added as task
-gem_packages:
+common_gem_packages:
   - evil-winrm
   - pass-station
   - wpscan
+
+osint_gem_packages:
+
 
 # Group ownership for the tools that are installed directly to /opt
 group: kali
 user: kali
 
 # Common Role git repos
-git_repos:
+common_git_repos:
   - {
       path: "/opt",
       dir_name: "ntlm_theft",
@@ -341,15 +430,81 @@ git_repos:
       repo: "https://github.com/arthaud/git-dumper.git",
     }
 
-pip_install_common:
+osint_git_repos:
+  - {
+      path: "/opt",
+      dir_name: "Spiderpig",
+      repo: "https://github.com/hatlord/Spiderpig.git",
+    }
+  - {
+      path: "/opt",
+      dir_name: "DumpsterDiver",
+      repo: "https://github.com/securing/DumpsterDiver.git",
+    }
+  - {
+      path: "/opt",
+      dir_name: "Infoga",
+      repo: "https://github.com/m4ll0k/Infoga.git",
+    }
+  - {
+      path: "/opt",
+      dir_name: "LittleBrother",
+      repo: "https://github.com/Lulz3xploit/LittleBrother",
+    }
+  - {
+      path: "/opt",
+      dir_name: "sn0int",
+      repo: "https://github.com/kpcyrd/sn0int.git",
+    }
+  - {
+      path: "/opt",
+      dir_name: "buster",
+      repo: "https://github.com/sham00n/buster",
+    }
+  - {
+      path: "/opt",
+      dir_name: "sherlock",
+      repo: "https://github.com/sherlock-project/sherlock.git",
+    }
+  - {
+      path: "/opt",
+      dir_name: "reconspider",
+      repo: "https://github.com/bhavsec/reconspider",
+    }
+  - {
+      path: "/opt",
+      dir_name: "WhatsMyName",
+      repo: "https://github.com/WebBreacher/WhatsMyName.git",
+    }
+  - {
+      path: "/opt",
+      dir_name: "WikiLeaker",
+      repo: "https://github.com/jocephus/WikiLeaker.git",
+    }
+  - {
+      path: "/opt",
+      dir_name: "OnionSearch",
+      repo: "https://github.com/megadose/OnionSearch.git",
+    }
+  - {
+      path: "/opt",
+      dir_name: "toutatis",
+      repo: "https://github.com/megadose/toutatis.git",
+    }
+
+common_pip_install:
   - { path: "/opt/jwt_tool" }
 
+osint_pip_install:
 
-python_setup_common:
+
+common_python_setup:
   - { path: "/opt/certipy" }
 
+osint_python_setup:
 
-go_tools:
+
+common_go_tools:
   - { tool: "CloudBrute", repo: "github.com/0xsha/CloudBrute@latest" }
   - { tool: "gitleaks", repo: "github.com/zricethezav/gitleaks.git@latest" }
   - { tool: "hakrawler", repo: "github.com/hakluke/hakrawler@latest" }
@@ -358,6 +513,10 @@ go_tools:
   - { tool: "subjack", repo: "github.com/haccer/subjack@latest" }
   - { tool: "trufflehog", repo: "github.com/trufflesecurity/trufflehog.git@latest" }
   - { tool: "waybackurls", repo: "github.com/tomnomnom/waybackurls@latest" }
+
+osint_go_tools:
+
+
 
 #binaries
 aquatone: "https://github.com/michenriksen/aquatone/releases/download/v1.7.0/aquatone_linux_amd64_1.7.0.zip"

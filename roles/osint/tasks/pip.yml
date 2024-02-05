@@ -1,0 +1,13 @@
+- name: Install and upgrade pip
+  ansible.builtin.pip:
+    name: pip
+    extra_args: --upgrade
+    executable: pip3
+
+- name: Install python packages
+  ansible.builtin.pip:
+    name: "{{ item }}"
+    state: latest
+    executable: pip3
+  loop: "{{ osint_pip_packages }}"
+

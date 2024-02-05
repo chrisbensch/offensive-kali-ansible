@@ -9,7 +9,7 @@
     name: "{{ item }}"
     state: latest
     executable: pip3
-  loop: "{{ pip_packages }}"
+  loop: "{{ common_pip_packages }}"
 
 #- name: Install pipx
 #  ansible.builtin.shell: python3 -m pip install --user pipx
