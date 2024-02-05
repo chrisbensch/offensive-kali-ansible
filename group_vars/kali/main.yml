@@ -4,16 +4,20 @@ zsh_user: kali
 
 # common apt packages to install
 kali_packages:
+  - assetfinder
   - awscli
   - bettercap
+  - bloodhound
   - build-essential
   - chromium
-  - docker.io
-  - docker-compose
   - dnsutils
+  - docker-compose
+  - docker.io
+  - exiftool
   - eyewitness
   - feroxbuster
   - ffuf
+  - flameshot
   - gdb
   - gdbserver
   - gem
@@ -25,74 +29,70 @@ kali_packages:
   - joomscan
   - jq
   - keepassxc
-  - libffi-dev
-  - libpcap-dev
-  - libssl-dev
   - libbz2-dev
-  - libreadline-dev
-  - libsqlite3-dev
+  - libffi-dev
+  - libguestfs-tools
+  - libkrb5-dev
+  - liblzma-dev
   - libncurses5-dev
   - libncursesw5-dev
-  - liblzma-dev
-  - libguestfs-tools
+  - libpcap-dev
+  - libreadline-dev
+  - libsqlite3-dev
   - libssl-dev
   - libwacom-common
-  - libkrb5-dev
   - llvm
-  - msfpc
   - mimikatz
-  - ncat
+  - msfpc
   - nbtscan-unixwiz
+  - ncat
   - neo4j
   - npm
+  - ntpdate
   - parallel
   - pipx
   - powershell-empire
   - putty-tools
-  - python3-setuptools
+  - python3-dev
   - python3-distutils
+  - python3-full
   - python3-openssl
   - python3-pip
+  - python3-setuptools
   - python3-venv
-  - python3-dev
-  - python3-full
-  - pipx
   - rust-all
   - seclists
+  - spiderfoot
   - starkiller
+  - sublist3r
   - tk-dev
   - xz-utils
   - zlib1g-dev
   - zsh
   - zsh-syntax-highlighting
-  - assetfinder
-  - spiderfoot
-  - sublist3r
-  - bloodhound
-  - nbtscan-unixwiz
 
 # pip packages
 pip_packages:
   - Cython
+  - certipy-ad
   - dirhunt
   - getsploit
   - ldap3
-  - mitm6
   - minikerberos
+  - mitm6
   - pipenv
   - poetry
-  - python3-ldap
   - python-libpcap
+  - python3-ldap
   - pywhat
   - requests
   - unicorn
-  - certipy-ad
 
 # Gem Packages -- still needs added as task
 gem_packages:
+  - evil-winrm
   - pass-station
   - wpscan
-  - evil-winrm
 
 # Group ownership for the tools that are installed directly to /opt
 group: kali
@@ -350,14 +350,14 @@ python_setup_common:
 
 
 go_tools:
-  - { tool: "hakrawler", repo: "github.com/hakluke/hakrawler@latest" }
-  - { tool: "shhgit", repo: "github.com/eth0izzle/shhgit@latest" }
-  - { tool: "gitleaks", repo: "github.com/zricethezav/gitleaks.git@latest" }
-  - { tool: "trufflehog", repo: "github.com/trufflesecurity/trufflehog.git@latest" }
   - { tool: "CloudBrute", repo: "github.com/0xsha/CloudBrute@latest" }
-  - { tool: "waybackurls", repo: "github.com/tomnomnom/waybackurls@latest" }
-  - { tool: "subjack", repo: "github.com/haccer/subjack@latest" }
+  - { tool: "gitleaks", repo: "github.com/zricethezav/gitleaks.git@latest" }
+  - { tool: "hakrawler", repo: "github.com/hakluke/hakrawler@latest" }
   - { tool: "kerbrute", repo: "github.com/ropnop/kerbrute@latest" }
+  - { tool: "shhgit", repo: "github.com/eth0izzle/shhgit@latest" }
+  - { tool: "subjack", repo: "github.com/haccer/subjack@latest" }
+  - { tool: "trufflehog", repo: "github.com/trufflesecurity/trufflehog.git@latest" }
+  - { tool: "waybackurls", repo: "github.com/tomnomnom/waybackurls@latest" }
 
 #binaries
 aquatone: "https://github.com/michenriksen/aquatone/releases/download/v1.7.0/aquatone_linux_amd64_1.7.0.zip"

@@ -1,8 +1,9 @@
 # Main Playbook
 ---
-- hosts: localhost
+- name: "Customizing Kali"
+  hosts: localhost
   roles:
-    - common
+    - role: common
 #    - external
 #    - internal
 # maybe add a forensics role
