@@ -3,3 +3,6 @@
   copy:
     src: "{{ role_path }}/files/mount-shared-folders"
     dest: /usr/local/sbin/
+    owner: root
+    group: root
+    mode: 0755
