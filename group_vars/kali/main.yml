@@ -479,6 +479,13 @@ osint_git_repos:
 common_pip_install:
   - { path: "/opt/jwt_tool" }
 
+common_pipx_packages:
+  - {
+      name: "Impacket",
+      index_url: "https://github.com/fortra/impacket.git",
+    }
+
+
 osint_pip_install:
 
 

@@ -4,7 +4,7 @@
     extra_args: --upgrade
     executable: pip3
 
-- name: Install python packages
+- name: Install python pip packages
   ansible.builtin.pip:
     name: "{{ item }}"
     state: latest
@@ -27,6 +27,15 @@
 #  ansible.builtin.shell: source .zshrc && pipx install crackmapexec --force
 #  args:
 #    executable: /bin/zsh
+
+- name: Install pipx packages
+  community.general.pipx:
+    name: "{{ item }}"
+    state: latest
+    executable: pipx
+  loop: "{{ common_pipx_packages }}"
+
+
 
 - name: Install NetExec
   become_user: "{{ zsh_user }}"
