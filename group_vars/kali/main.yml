@@ -49,6 +49,7 @@ common_kali_packages:
   - npm
   - ntpdate
   - parallel
+  - php
   - pipx
   - powershell-empire
   - putty-tools
