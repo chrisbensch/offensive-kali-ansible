@@ -35,8 +35,9 @@
     state: latest
     #executable: python3
   loop: "{{ common_pipx_packages }}"
-#- name: Install NetExec
-#  become_user: "{{ zsh_user }}"
-#  ansible.builtin.shell: pipx ensurepath && pipx install git+https://github.com/Pennyw0rth/NetExec
-#  args:
-#    executable: /bin/zsh
+
+- name: Run pipx ensurepath and completions
+  become_user: "{{ zsh_user }}"
+  ansible.builtin.shell: pipx ensurepath && pipx completions
+  args:
+    executable: /bin/zsh
