@@ -313,11 +313,6 @@ common_git_repos:
     }
   - {
       path: "/opt",
-      dir_name: "impacket",
-      repo: "https://github.com/SecureAuthCorp/impacket.git",
-    }
-  - {
-      path: "/opt",
       dir_name: "pyWhat-pcap",
       repo: "https://github.com/bee-san/pyWhat.git",
     }
@@ -481,6 +476,8 @@ common_pip_install:
 common_pipx_packages:
   - { name: "impacket", url: "git+https://github.com/fortra/impacket.git" }
   - { name: "netexec", url: "git+https://github.com/Pennyw0rth/NetExec" }
+  - { name: "aquatone", url: "git+https://github.com/michenriksen/aquatone" }
+  - { name: "assetfinder", url: "git+https://github.com/tomnomnom/assetfinder" }
 
 osint_pip_install:
 
@@ -505,8 +502,8 @@ common_go_tools:
 osint_go_tools:
 
 #binaries
-aquatone: "https://github.com/michenriksen/aquatone/releases/download/v1.7.0/aquatone_linux_amd64_1.7.0.zip"
-assetfinder: "https://github.com/tomnomnom/assetfinder/releases/download/v0.1.1/assetfinder-linux-amd64-0.1.1.tgz"
+#aquatone: "https://github.com/michenriksen/aquatone/releases/download/v1.7.0/aquatone_linux_amd64_1.7.0.zip"  #  aquatone_linux_amd64_
+#assetfinder: "https://github.com/tomnomnom/assetfinder/releases/download/v0.1.1/assetfinder-linux-amd64-0.1.1.tgz"  # assetfinder-linux-amd64
 
 common_binary_packages:
   - {
