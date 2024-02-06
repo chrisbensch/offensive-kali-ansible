@@ -481,7 +481,8 @@ common_pip_install:
 
 common_pipx_packages:
   - {
-      source: "git+https://github.com/fortra/impacket.git",
+      name: "impacket",
+      url: "git+https://github.com/fortra/impacket.git",
     }
 
 
