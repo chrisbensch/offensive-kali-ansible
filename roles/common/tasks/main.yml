@@ -3,6 +3,10 @@
 - name: import vars
   ansible.builtin.include_vars: ../../group_vars/kali/main.yml
 
+- name: Fix /etc/sudoers
+  become: True
+  ansible.builtin.import_tasks: sudo.yml
+  
 - name: apt tasks
   become: True
   ansible.builtin.import_tasks: apt.yml
@@ -11,9 +15,7 @@
   become: True
   ansible.builtin.import_tasks: env.yml
 
-- name: Fix /etc/sudoers
-  become: True
-  ansible.builtin.import_tasks: sudo.yml
+
 
 - name: Python Packages
   ansible.builtin.import_tasks: pip.yml
