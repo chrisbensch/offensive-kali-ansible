@@ -4,6 +4,7 @@
   hosts: localhost
   roles:
     - role: common
+
 #    - osint
 #    - forensics
 # maybe add a forensics role

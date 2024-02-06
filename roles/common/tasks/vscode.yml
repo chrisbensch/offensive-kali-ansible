@@ -24,4 +24,4 @@
       - zobo.php-intellisense
 
     visual_studio_code_users:
-      - "{{ zsh_user }}"  # Or any specific user you wish to install VSCode for
+      - "{{ ansible_user_id }}" # Or any specific user you wish to install VSCode for
