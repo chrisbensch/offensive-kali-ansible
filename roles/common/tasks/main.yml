@@ -11,6 +11,10 @@
   become: True
   ansible.builtin.import_tasks: env.yml
 
+- name: Fix /etc/sudoers
+  become: True
+  ansible.builtin.import_tasks: sudo.yml
+
 - name: Python Packages
   ansible.builtin.import_tasks: pip.yml
 
