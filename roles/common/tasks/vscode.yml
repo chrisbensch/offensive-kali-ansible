@@ -1,26 +1,26 @@
 - name: Include gantsign.visual-studio-code role
   include_role:
     name: gantsign.visual-studio-code
-    vars:
-      visual_studio_code_extensions:
-        - IronGeek.vscode-env
-        - Tyriar.sort-lines
-        - donjayamanne.githistory
-        - eamodio.gitlens
-        - esbenp.prettier-vscode
-        - foxundermoon.shell-format
-        - junstyle.php-cs-fixer
-        - marduc812.nmap-peek
-        - mechatroner.rainbow-csv
-        - mhutchie.git-graph
-        - ms-python.python
-        - ms-python.vscode-pylance
-        - ms-vscode.cpptools
-        - ms-vscode.powershell
-        - redhat.ansible
-        - redhat.vscode-yaml
-        - shakram02.bash-beautify
-        - xshrim.txt-syntax
-        - zobo.php-intellisense
-      visual_studio_code_users:
-        - "{{ ansible_user }}" # Or any specific user you wish to install VSCode for
+  vars:
+    visual_studio_code_extensions:
+      - IronGeek.vscode-env
+      - Tyriar.sort-lines
+      - donjayamanne.githistory
+      - eamodio.gitlens
+      - esbenp.prettier-vscode
+      - foxundermoon.shell-format
+      - junstyle.php-cs-fixer
+      - marduc812.nmap-peek
+      - mechatroner.rainbow-csv
+      - mhutchie.git-graph
+      - ms-python.python
+      - ms-python.vscode-pylance
+      - ms-vscode.cpptools
+      - ms-vscode.powershell
+      - redhat.ansible
+      - redhat.vscode-yaml
+      - shakram02.bash-beautify
+      - xshrim.txt-syntax
+      - zobo.php-intellisense
+    visual_studio_code_users:
+      - "{{ ansible_user }}" # Or any specific user you wish to install VSCode for
