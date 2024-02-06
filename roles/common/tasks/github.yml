@@ -1,0 +1,27 @@
+---
+- name: Create temporary build directory
+  ansible.builtin.tempfile:
+    state: directory
+  register: build_dir
+
+- name: "Copying python script to download github releases"
+  copy:
+    src: "{{ role_path }}/files/githubdownload.py"
+    dest: "{{ build_dir.path }}/githubdownload.py"
+    owner: root
+    group: root
+    mode: 0755
+
+- name: "Downloading github releases"
+  shell: "{{ build_dir.path }}/githubdownload.py {{ item.repo }} {{ item.regex }} {{ item.location }} {% if item.filename is defined %}{{ item.filename }}{% endif %}"
+  loop: "{{ common_binary_packages }}"
+  loop_control:
+    label: "{{ item.repo }}"
+  async: 45
+  poll: 0
+
+- name: Remove temporary build directory
+  ansible.builtin.file:
+    path: "{{ build_dir.path }}"
+    state: absent
+  when: build_dir.path is defined

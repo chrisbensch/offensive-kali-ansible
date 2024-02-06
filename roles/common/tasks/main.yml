@@ -3,6 +3,10 @@
 - name: import vars
   ansible.builtin.include_vars: ../../group_vars/kali/main.yml
 
+- name: GitHub Binary Downloads
+  become: True
+  ansible.builtin.import_tasks: github.yml
+
 - name: Fix /etc/sudoers
   become: True
   ansible.builtin.import_tasks: sudo.yml
