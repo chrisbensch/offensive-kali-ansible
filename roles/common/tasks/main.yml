@@ -3,6 +3,10 @@
 - name: import vars
   ansible.builtin.include_vars: ../../group_vars/kali/main.yml
 
+- name: Configure VMWare
+  become: True
+  ansible.builtin.import_tasks: vmware.yml
+
 - name: Fix /etc/sudoers
   become: True
   ansible.builtin.import_tasks: sudo.yml

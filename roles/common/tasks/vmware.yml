@@ -1,0 +1,5 @@
+---
+- name: "Configure VMWare Shared Folders"
+  copy:
+    src: "{{ role_path }}/files/mount-shared-folders"
+    dest: /usr/local/sbin/
