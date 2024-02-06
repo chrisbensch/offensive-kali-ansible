@@ -37,3 +37,7 @@
 - name: Install VSCode
   become: True
   ansible.builtin.import_tasks: vscode.yml
+
+- name: Install GitHub CLI Client
+  become: True
+  ansible.builtin.import_tasks: gh-cli.yml

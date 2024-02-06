@@ -1,0 +1,27 @@
+---
+- name: Install required packages
+  apt:
+    name:
+      - apt-transport-https
+      - software-properties-common
+    state: present
+
+- name: Import GitHub CLI GPG key
+  ansible.builtin.apt_key:
+    url: https://cli.github.com/packages/githubcli-archive-keyring.gpg
+    state: present
+
+- name: Add GitHub CLI repository
+  ansible.builtin.apt_repository:
+    repo: "deb [arch=amd64] https://cli.github.com/packages stable main"
+    state: present
+    filename: "github-cli"
+
+- name: Update APT package index
+  ansible.builtin.apt:
+    update_cache: yes
+
+- name: Install GitHub CLI
+  apt:
+    name: gh
+    state: present
