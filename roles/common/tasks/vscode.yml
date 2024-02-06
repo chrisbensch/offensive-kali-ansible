@@ -1,6 +1,6 @@
 - name: Include gantsign.visual-studio-code role
-  include_role:
-    name: gantsign.visual-studio-code
+#  include_role:
+#    name: gantsign.visual-studio-code
 #  vars:
 #    visual_studio_code_extensions:
 #      - IronGeek.vscode-env
@@ -24,6 +24,8 @@
 #      - zobo.php-intellisense
 #    visual_studio_code_users:
 #      - "{{ ansible_user }}" # Or any specific user you wish to install VSCode for
+  ansible.builtin.include_role:
+    name: gantsign.visual-studio-code
     vars:
       users:
         - username: "{{ zsh_user }}"
