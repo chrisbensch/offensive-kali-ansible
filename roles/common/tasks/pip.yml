@@ -38,8 +38,8 @@
 
 
 
-- name: Install NetExec
-  become_user: "{{ zsh_user }}"
-  ansible.builtin.shell: pipx ensurepath && pipx install git+https://github.com/Pennyw0rth/NetExec
-  args:
-    executable: /bin/zsh
+#- name: Install NetExec
+#  become_user: "{{ zsh_user }}"
+#  ansible.builtin.shell: pipx ensurepath && pipx install git+https://github.com/Pennyw0rth/NetExec
+#  args:
+#    executable: /bin/zsh
