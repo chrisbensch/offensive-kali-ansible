@@ -32,7 +32,7 @@
   community.general.pipx:
     name: "{{ item }}"
     state: latest
-    executable: pipx
+    executable: python3
   loop: "{{ common_pipx_packages }}"
 
 
