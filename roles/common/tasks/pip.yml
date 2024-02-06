@@ -30,9 +30,10 @@
 
 - name: Install pipx packages
   community.general.pipx:
-    name: "{{ item }}"
+    name: "{{ item.name }}"
+    source: "{{ item.url }}"
     state: latest
-    executable: python3
+    #executable: python3
   loop: "{{ common_pipx_packages }}"
 
 
