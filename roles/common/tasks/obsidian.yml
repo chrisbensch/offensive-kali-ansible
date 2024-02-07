@@ -4,6 +4,7 @@
     obsidian_appimage_download_dir: "/opt/Obsidian"
     obsidian_appimage_url: "https://github.com/obsidianmd/obsidian-releases/releases//download/{{ obsidian_latest['tag'] }}/Obsidian-{{ obsidian_latest['tag'] | regex_replace('^v','') }}.AppImage"
     obsidian_appimage_name: "Obsidian.AppImage"
+    obsidian_appimage_path: "{{ obsidian_appimage_download_dir }}/{{ obsidian_appimage_name }}"
   block:
     - name: Ensure download directory exists
       file:
@@ -22,3 +23,19 @@
         url: "{{ obsidian_appimage_url }}"
         dest: "{{ obsidian_appimage_download_dir }}/{{ obsidian_appimage_name }}"
         mode: "0755"
+    
+    - name: Add Obsidian to the XFCE menu
+      copy:
+        content: |
+          [Desktop Entry]
+          Version=1.0
+          Type=Application
+          Name=Obsidian
+          Icon=obsidian
+          Exec="{{ obsidian_appimage_path }}"
+          Comment=Obsidian Personal Knowledge Management
+          Categories=Office;
+          Terminal=false
+        dest: ~/.local/share/applications/obsidian.desktop
+        mode: '0644'
+
