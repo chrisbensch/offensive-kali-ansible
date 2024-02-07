@@ -3,11 +3,6 @@
 - name: import vars
   ansible.builtin.include_vars: ../../group_vars/kali/main.yml
 
-- name: Install Obsidian
-  become: True
-  ansible.builtin.import_tasks: obsidian.yml
-
-
 - name: Fix /etc/sudoers
   become: True
   ansible.builtin.import_tasks: sudo.yml
@@ -46,3 +41,7 @@
 - name: Install GitHub CLI Client
   become: True
   ansible.builtin.import_tasks: gh-cli.yml
+
+- name: Install Obsidian
+  become: True
+  ansible.builtin.import_tasks: obsidian.yml
