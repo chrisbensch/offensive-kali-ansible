@@ -7,6 +7,7 @@
 ---
 
 <p align="center"> This Ansible Playbook automates the setup of kali machines used for penetration tests. The Ansible Roles included in this playbook automates the downloading and installalation of additional frameworks, packages, and offensive penetration testing and red-teaming utilities for a Kali Linux machine.
+I didn't even know where to begin with building this from scratch, I used the original by @hackedbyagirl as a starting point.  After fixing existing problems I began to customize everything in my own way.  I've also borrowed from @ippsec and his 'parrot-build' repo.
   <br>
 </p>
 
