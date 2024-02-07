@@ -1,3 +1,2 @@
-- src:
-    gantsign.visual-studio-code
-    community.general
+- src: gantsign.visual-studio-code
+- src: community.general
