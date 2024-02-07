@@ -1,6 +1,6 @@
 ---
 - name: Get Obsidian latest tag 
-  github_release:
+  community.general.github_release:
     user: obsidianmd
     repo: obsidian-releases
     action: latest_release
