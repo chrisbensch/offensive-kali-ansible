@@ -27,7 +27,7 @@
     
     - name: Ensure local app directory exists
       file:
-        path: "{{ obsidian_appimage_download_dir }}"
+        path: "{{ local_app_dir }}"
         state: directory
 
     - name: Add Obsidian to the XFCE menu
