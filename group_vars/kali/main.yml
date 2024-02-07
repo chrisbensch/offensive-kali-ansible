@@ -117,6 +117,7 @@ common_pip_packages:
   - certipy-ad
   - dirhunt
   - getsploit
+  - github3.py
   - ldap3
   - minikerberos
   - mitm6
