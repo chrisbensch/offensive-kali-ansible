@@ -5,7 +5,7 @@
     obsidian_appimage_url: "https://github.com/obsidianmd/obsidian-releases/releases//download/{{ obsidian_latest['tag'] }}/Obsidian-{{ obsidian_latest['tag'] | regex_replace('^v','') }}.AppImage"
     obsidian_appimage_name: "Obsidian.AppImage"
     obsidian_appimage_path: "{{ obsidian_appimage_download_dir }}/{{ obsidian_appimage_name }}"
-    local_app_dir: "{{ zsh_user }}/.local/share/applications"
+    local_app_dir: "/home/{{ zsh_user }}/.local/share/applications"
   block:
     - name: Ensure download directory exists
       file:
