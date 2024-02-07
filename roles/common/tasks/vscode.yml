@@ -22,5 +22,6 @@
           - redhat.ansible
           - redhat.vscode-yaml
           - shakram02.bash-beautify
+          - wesbos.theme-cobalt2
           - xshrim.txt-syntax
           - zobo.php-intellisense
