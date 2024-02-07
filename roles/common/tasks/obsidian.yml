@@ -6,6 +6,7 @@
     obsidian_appimage_name: "Obsidian.AppImage"
     obsidian_appimage_path: "{{ obsidian_appimage_download_dir }}/{{ obsidian_appimage_name }}"
     local_app_dir: "/home/{{ zsh_user }}/.local/share/applications"
+    local_icons_dir: "/home/{{ zsh_user }}/.icons"
   block:
     - name: Ensure download directory exists
       file:
@@ -29,6 +30,17 @@
       file:
         path: "{{ local_app_dir }}"
         state: directory
+
+    - name: Ensure local icon directory exists
+      file:
+        path: "{{ local_icons_dir }}"
+        state: directory
+    
+    - name: Copy Obsidian Icon
+      copy:
+        src: "{{ role_path }}/files/obsidian.png"
+        dest: "{{ local_icons_dir }}"
+        mode: '0644'
 
     - name: Add Obsidian to the XFCE menu
       copy:
