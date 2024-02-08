@@ -26,10 +26,6 @@
   become: True
   ansible.builtin.import_tasks: github.yml
 
-#- name: Install Binary Packages # Soon to be replaced by above GitHub Binary Downloads
-#  become: True
-#  ansible.builtin.import_tasks: binaries.yml
-
 - name: Customize QTerminal
   become: False
   ansible.builtin.import_tasks: qterminal.yml
