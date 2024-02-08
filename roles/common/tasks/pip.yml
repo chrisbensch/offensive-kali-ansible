@@ -5,7 +5,7 @@
     executable: pip3
 
 - name: Install python pip packages
-  #become: true
+  become_user: "{{ zsh_user }}"
   ansible.builtin.pip:
     name: "{{ item }}"
     state: latest
