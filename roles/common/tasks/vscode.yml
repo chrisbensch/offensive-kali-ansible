@@ -33,6 +33,6 @@
       {
         "workbench.colorTheme": "Cobalt2"
       } 
-    owner: {{ zsh_user }}
-    group: {{ zsh_user }}
+    owner: "{{ zsh_user }}"
+    group: "{{ zsh_user }}"
     mode: '0644'
