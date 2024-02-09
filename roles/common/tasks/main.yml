@@ -7,7 +7,7 @@
   become: True
   ansible.builtin.import_tasks: sudo.yml
   
-- name: apt tasks
+- name: apt Tasks
   become: True
   ansible.builtin.import_tasks: apt.yml
 
@@ -30,7 +30,7 @@
   become: False
   ansible.builtin.import_tasks: qterminal.yml
 
-- name: Install VSCode
+- name: Install and Configure VSCode
   become: True
   ansible.builtin.import_tasks: vscode.yml
 
