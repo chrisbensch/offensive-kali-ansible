@@ -22,7 +22,7 @@
   become: True
   ansible.builtin.import_tasks: git.yml
 
-- name: GitHub Binary Downloads
+- name: Install GitHub Binary Tools
   become: True
   ansible.builtin.import_tasks: github.yml
 
