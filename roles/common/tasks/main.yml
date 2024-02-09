@@ -3,6 +3,10 @@
 - name: import vars
   ansible.builtin.include_vars: ../../group_vars/kali/main.yml
 
+- name: Upgrade OS
+  become: True
+  ansible.builtin.import_tasks: update.yml
+
 - name: Fix /etc/sudoers
   become: True
   ansible.builtin.import_tasks: sudo.yml

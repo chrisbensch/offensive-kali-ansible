@@ -1,0 +1,17 @@
+---
+- name: Update and upgrade Debian-based system
+  become: true  # This is required to gain root privileges
+  block:
+    - name: Update apt repo and cache on all Debian/Ubuntu boxes
+      ansible.builtin.apt:
+        update_cache: true
+        cache_valid_time: 3600  # Optional: to avoid updating cache if it was updated in the last hour
+
+    - name: Upgrade all packages to the latest version
+      ansible.builtin.apt:
+        upgrade: dist
+
+    - name: Remove unused packages and their dependencies
+      ansible.builtin.apt:
+        autoremove: true
+        autoclean: true
