@@ -546,6 +546,11 @@ common_binary_packages:
       regex: "assetfinder-linux-amd64",
       location: "/opt/assetfinder",
     }
+  - {
+      repo: "romkatv/gitstatus",
+      regex: "linux-x86_64.tar.gz",
+      location: "{{ zsh_user }}/.cache/gitstatus/"
+  }
 
 
 
