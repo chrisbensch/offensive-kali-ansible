@@ -16,7 +16,7 @@
       SaveSizeOnExit=true
       TabBarless=false
       UseCWD=true
-      fontFamily=FiraCode
-      fontSize=10
+      fontFamily=MesloLGS NF
+      fontSize=12
       highlightCurrentTerminal=true
       showTerminalSizeHint=true

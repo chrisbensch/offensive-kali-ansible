@@ -19,11 +19,27 @@
 #  - name: Install and configure zsh plugins
 
 
+# Install Fonts
+  - name: Ensure download directory exists
+    file:
+      path: "{{ ansible_env.HOME }}/.fonts"
+      state: directory
+  
+  - name: Download multiple files from URLs
+    ansible.builtin.get_url:
+      url: "{{ item.url }}"
+      dest: "{{ item.dest }}"
+      owner: "{{ zsh_user }}"
+      group: "{{ zsh_user }}"
+      mode: '0644'
+    loop: "{{ fonts_url }}"
+
+# Install PowerLevel10k
   - name: Install PowerLevel10k
     ansible.builtin.command: git clone --depth=1 https://github.com/romkatv/powerlevel10k.git "{{ ansible_env.HOME }}/.oh-my-zsh/custom/themes/powerlevel10k"
   
   - name: Configure PowerLevel10k
     copy:
       src: "{{ role_path }}/files/p10k.zsh"
-      dest: "{{ ansible_env.HOME }}"
+      dest: "{{ ansible_env.HOME }}/.p10k.zsh"
       mode: '0644'

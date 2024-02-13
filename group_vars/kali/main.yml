@@ -552,7 +552,23 @@ common_binary_packages:
       location: "{{ zsh_user }}/.cache/gitstatus/"
   }
 
-
+font_urls:
+  - {
+      url: "https://github.com/romkatv/powerlevel10k-media/raw/master/MesloLGS%20NF%20Regular.ttf",
+      dest: "{{ ansible_env.HOME }}/.fonts/MesloLGS NF Regular.ttf",
+    }
+  - {
+      url: "https://github.com/romkatv/powerlevel10k-media/raw/master/MesloLGS%20NF%20Bold.ttf",
+      dest: "{{ ansible_env.HOME }}/.fonts/MesloLGS NF Bold.ttf",
+    }
+  - {
+      url: "https://github.com/romkatv/powerlevel10k-media/raw/master/MesloLGS%20NF%20Italic.ttf",
+      dest: "{{ ansible_env.HOME }}/.fonts/MesloLGS NF Italic.ttf",
+    }
+  - {
+      url: "https://github.com/romkatv/powerlevel10k-media/raw/master/MesloLGS%20NF%20Bold%20Italic.ttf",
+      dest: "{{ ansible_env.HOME }}/.fonts/MesloLGS NF Bold Italic.ttf",
+    }
 
 
 
