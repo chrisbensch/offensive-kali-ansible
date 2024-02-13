@@ -32,7 +32,7 @@
       owner: "{{ zsh_user }}"
       group: "{{ zsh_user }}"
       mode: '0644'
-    loop: "{{ fonts_url }}"
+    loop: "{{ font_urls }}"
 
 # Install PowerLevel10k
   - name: Install PowerLevel10k
