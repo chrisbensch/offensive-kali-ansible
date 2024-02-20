@@ -550,7 +550,17 @@ common_binary_packages:
       repo: "romkatv/gitstatus",
       regex: "linux-x86_64.tar.gz",
       location: "{{ zsh_user }}/.cache/gitstatus/"
-  }
+    }
+  - {
+      repo: "lkarlslund/Adalanche",
+      regex: "-x64-",
+      location: "/opt/adalanche"
+    }
+  - {
+      repo: "lkarlslund/ldapnomnom",
+      regex: "-x64",
+      location: "/opt/ldapnomnom"
+    }
 
 font_urls:
   - {
