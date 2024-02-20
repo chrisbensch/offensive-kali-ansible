@@ -26,12 +26,12 @@
     state: absent
   when: build_dir.path is defined
 
-- name: Set new file privileges -- recursive
-  ansible.builtin.file:
-    owner: "{{ group }}"
-    path: "{{ item.path }}/{{ item.dir_name }}"
-    mode: 0755
-    recurse: yes
-  loop: "{{ common_binary_packages }}"
-  loop_control:
-    label: "{{ item.repo }}"
+#- name: Set new file privileges -- recursive
+#  ansible.builtin.file:
+#    owner: "{{ group }}"
+#    path: "{{ item.path }}/{{ item.dir_name }}"
+#    mode: 0755
+#    recurse: yes
+#  loop: "{{ common_binary_packages }}"
+#  loop_control:
+#    label: "{{ item.repo }}"
