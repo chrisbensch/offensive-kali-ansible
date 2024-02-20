@@ -553,12 +553,22 @@ common_binary_packages:
     }
   - {
       repo: "lkarlslund/Adalanche",
-      regex: "-x64-",
+      regex: "linux-x64-",
+      location: "/opt/adalanche"
+    }
+  - {
+      repo: "lkarlslund/Adalanche",
+      regex: "windows-x64-",
       location: "/opt/adalanche"
     }
   - {
       repo: "lkarlslund/ldapnomnom",
-      regex: "-x64",
+      regex: "windows-x64-obfuscated",
+      location: "/opt/ldapnomnom"
+    }
+  - {
+      repo: "lkarlslund/ldapnomnom",
+      regex: "linux-x64-obfuscated",
       location: "/opt/ldapnomnom"
     }
 
