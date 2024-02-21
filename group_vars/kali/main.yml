@@ -514,10 +514,6 @@ common_go_tools:
 
 osint_go_tools:
 
-#binaries
-#aquatone: "https://github.com/michenriksen/aquatone/releases/download/v1.7.0/aquatone_linux_amd64_1.7.0.zip"  #  aquatone_linux_amd64_
-#assetfinder: "https://github.com/tomnomnom/assetfinder/releases/download/v0.1.1/assetfinder-linux-amd64-0.1.1.tgz"  # assetfinder-linux-amd64
-
 common_binary_packages:
   - {
       repo: "jpillora/chisel",
