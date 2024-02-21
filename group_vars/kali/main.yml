@@ -414,6 +414,11 @@ common_git_repos:
       dir_name: "git-dumper",
       repo: "https://github.com/arthaud/git-dumper.git",
     }
+  - {
+      path: "/opt",
+      dir_name: "hoaxshell",
+      repo: "https://github.com/t3l3machus/hoaxshell",
+    }
 
 osint_git_repos:
   - {
