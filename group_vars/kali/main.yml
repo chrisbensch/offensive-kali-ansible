@@ -48,6 +48,7 @@ common_kali_packages:
   - neo4j
   - npm
   - ntpdate
+  - nuclei
   - parallel
   - php
   - pipx
@@ -128,6 +129,7 @@ common_pip_packages:
   - pywhat
   - requests
   - unicorn
+  - updog
 
 osint_pip_packages:
   - aiohttp
@@ -476,6 +478,11 @@ osint_git_repos:
       dir_name: "toutatis",
       repo: "https://github.com/megadose/toutatis.git",
     }
+  - {
+      path: "/opt",
+      dir_name: "swaks",
+      repo: "https://github.com/jetmore/swaks",
+    }
 
 common_pip_install:
   - { path: "/opt/jwt_tool" }
@@ -575,6 +582,12 @@ common_binary_packages:
       repo: "lkarlslund/ldapnomnom",
       regex: "linux-x64-obfuscated",
       location: "/opt/ldapnomnom"
+    }
+  - {
+      repo: "DominicBreuker/pspy",
+      regex: "pspy64s",
+      location: "/opt/pspy",
+
     }
 
 font_urls:
