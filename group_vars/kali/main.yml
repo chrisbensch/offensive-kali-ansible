@@ -128,7 +128,6 @@ common_pip_packages:
   - python3-ldap
   - pywhat
   - requests
-  - unicorn
   - updog
 
 osint_pip_packages:
@@ -482,6 +481,16 @@ osint_git_repos:
       path: "/opt",
       dir_name: "swaks",
       repo: "https://github.com/jetmore/swaks",
+    }
+  - {
+      path: "/opt",
+      dir_name: "gimmesh",
+      repo: "https://github.com/A3h1nt/gimmeSH.git",
+    }
+  - {
+      path: "/opt",
+      dir_name: "freeze",
+      repo: "https://github.com/Tylous/Freeze",
     }
 
 common_pip_install:
