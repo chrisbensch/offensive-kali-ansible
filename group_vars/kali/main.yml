@@ -420,6 +420,21 @@ common_git_repos:
       dir_name: "hoaxshell",
       repo: "https://github.com/t3l3machus/hoaxshell",
     }
+  - {
+      path: "/opt",
+      dir_name: "swaks",
+      repo: "https://github.com/jetmore/swaks",
+    }
+  - {
+      path: "/opt",
+      dir_name: "gimmesh",
+      repo: "https://github.com/A3h1nt/gimmeSH.git",
+    }
+  - {
+      path: "/opt",
+      dir_name: "freeze",
+      repo: "https://github.com/Tylous/Freeze",
+    }
 
 osint_git_repos:
   - {
@@ -477,21 +492,7 @@ osint_git_repos:
       dir_name: "toutatis",
       repo: "https://github.com/megadose/toutatis.git",
     }
-  - {
-      path: "/opt",
-      dir_name: "swaks",
-      repo: "https://github.com/jetmore/swaks",
-    }
-  - {
-      path: "/opt",
-      dir_name: "gimmesh",
-      repo: "https://github.com/A3h1nt/gimmeSH.git",
-    }
-  - {
-      path: "/opt",
-      dir_name: "freeze",
-      repo: "https://github.com/Tylous/Freeze",
-    }
+
 
 common_pip_install:
   - { path: "/opt/jwt_tool" }
@@ -515,10 +516,7 @@ common_go_tools:
   - { tool: "kerbrute", repo: "github.com/ropnop/kerbrute@latest" }
   - { tool: "shhgit", repo: "github.com/eth0izzle/shhgit@latest" }
   - { tool: "subjack", repo: "github.com/haccer/subjack@latest" }
-  - {
-      tool: "trufflehog",
-      repo: "github.com/trufflesecurity/trufflehog.git@latest",
-    }
+  - { tool: "trufflehog", repo: "github.com/trufflesecurity/trufflehog.git@latest" }
   - { tool: "waybackurls", repo: "github.com/tomnomnom/waybackurls@latest" }
 
 osint_go_tools:
