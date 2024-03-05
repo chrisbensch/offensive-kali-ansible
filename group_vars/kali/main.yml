@@ -435,6 +435,11 @@ common_git_repos:
       dir_name: "freeze",
       repo: "https://github.com/Tylous/Freeze",
     }
+  - {
+      path: "/opt",
+      dir_name: "psmapexec",
+      repo: "https://github.com/The-Viper-One/PsMapExec",
+    }
 
 osint_git_repos:
   - {

@@ -31,6 +31,10 @@
   become: True
   ansible.builtin.import_tasks: github.yml
 
+- name: Install golang Tools
+  become: True
+  ansible.builtin.import_tasks: golang.yml
+
 - name: Customize QTerminal
   become: False
   ansible.builtin.import_tasks: qterminal.yml
