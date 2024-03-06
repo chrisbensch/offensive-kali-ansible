@@ -515,13 +515,13 @@ common_python_setup:
 osint_python_setup:
 
 common_go_tools:
-  - { tool: "CloudBrute", repo: "github.com/0xsha/CloudBrute@latest" }
+#  - { tool: "CloudBrute", repo: "github.com/0xsha/CloudBrute@latest" }
   - { tool: "gitleaks", repo: "github.com/zricethezav/gitleaks@latest" }
   - { tool: "hakrawler", repo: "github.com/hakluke/hakrawler@latest" }
   - { tool: "kerbrute", repo: "github.com/ropnop/kerbrute@latest" }
   - { tool: "shhgit", repo: "github.com/eth0izzle/shhgit@latest" }
   - { tool: "subjack", repo: "github.com/haccer/subjack@latest" }
-  - { tool: "trufflehog", repo: "github.com/trufflesecurity/trufflehog@latest" }
+#  - { tool: "trufflehog", repo: "github.com/trufflesecurity/trufflehog@latest" }
   - { tool: "waybackurls", repo: "github.com/tomnomnom/waybackurls@latest" }
 
 osint_go_tools:
