@@ -4,7 +4,7 @@
 # the github3.py module if installed during a playbook.  The below should
 # be temporary.
 
-sudo apt update && sudo apt install -y python3 python3-pip ansible-core
+sudo apt update && sudo apt install -y python3 python3-pip ansible-core && sudo ln -s /usr/bin/python3 /usr/bin/python
 
 sudo pip3 install github3.py
 
