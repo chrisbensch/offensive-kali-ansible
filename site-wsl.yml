@@ -1,0 +1,10 @@
+# Main Playbook
+---
+- name: "Customizing Kali"
+  hosts: localhost
+  roles:
+    - role: wsl
+
+#    - osint
+#    - forensics
+# maybe add a forensics role
