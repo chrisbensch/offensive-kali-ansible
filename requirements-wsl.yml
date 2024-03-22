@@ -1,0 +1,8 @@
+#- src: gantsign.visual-studio-code
+#- src: community.general
+
+roles:
+  - src: gantsign.oh-my-zsh
+
+collections:
+  - name: community.general
