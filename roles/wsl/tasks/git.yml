@@ -37,13 +37,13 @@
 # Install Package dependencies
 - name: Install package dependencies
   block:
-    - name: Setup python packages for required git repos
-      ansible.builtin.command: python3 setup.py install
-      args:
-        chdir: "{{item.path}}"
-      loop: "{{common_python_setup}}"
-      loop_control:
-        label: "{{item.path}}"
+    #- name: Setup python packages for required git repos
+    #  ansible.builtin.command: python3 setup.py install
+    #  args:
+    #    chdir: "{{item.path}}"
+    #  loop: "{{common_python_setup}}"
+    #  loop_control:
+    #    label: "{{item.path}}"
 
     - name: Install pip dependencies for required git repos
       ansible.builtin.command: python3 -m pip install -r requirements.txt
