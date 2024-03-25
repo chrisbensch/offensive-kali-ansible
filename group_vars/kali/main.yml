@@ -42,6 +42,7 @@ common_kali_packages:
   - libwacom-common
   - llvm
   - mimikatz
+  - mingw-w64
   - msfpc
   - nbtscan-unixwiz
   - ncat
@@ -49,6 +50,8 @@ common_kali_packages:
   - npm
   - ntpdate
   - nuclei
+  - openssl
+  - osslsigncode
   - parallel
   - php
   - pipx
@@ -118,12 +121,13 @@ common_pip_packages:
   - certipy-ad
   - dirhunt
   - getsploit
-  - github3.py
+  #- github3.py
   - ldap3
   - minikerberos
   - mitm6
   - pipenv
   - poetry
+  - pypykatz
   - python-libpcap
   - python3-ldap
   - pywhat
@@ -440,6 +444,22 @@ common_git_repos:
       dir_name: "psmapexec",
       repo: "https://github.com/The-Viper-One/PsMapExec",
     }
+  - {
+    path: "/opt",
+    dir_name: "usernamer",
+    repo: "https://github.com/jseidl/usernamer",
+    }
+  - {
+    path: "/opt",
+    dir_name: "scarecrow",
+    repo: "https://github.com/Tylous/ScareCrow",
+    }
+  - {
+    path: "/opt",
+    dir_name: "ps2exe",
+    repo: "https://github.com/MScholtes/PS2EXE",
+    }
+
 
 osint_git_repos:
   - {
@@ -524,6 +544,7 @@ common_go_tools:
 #  - { tool: "trufflehog", repo: "github.com/trufflesecurity/trufflehog@latest" }
   - { tool: "waybackurls", repo: "github.com/tomnomnom/waybackurls@latest" }
 
+
 osint_go_tools:
 
 common_binary_packages:
@@ -595,7 +616,11 @@ common_binary_packages:
       repo: "DominicBreuker/pspy",
       regex: "pspy64s",
       location: "/opt/pspy",
-
+    }
+  - {
+      repo: "dwisiswant0/go-dork",
+      regex: "go-dork",
+      location: "/opt/go-dork",
     }
 
 font_urls:
