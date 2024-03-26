@@ -1,15 +1,34 @@
 ---
 # Resetting and Cleaning all git repos first
-- name: Find all directories in /opt
-  ansible.builtin.find:
-    paths: /opt
-    file_type: directory
-  register: found_dirs
+#- name: Find all directories in /opt
+#  ansible.builtin.find:
+#    paths: /opt
+#    file_type: directory
+#  register: found_dirs
+#
+#- name: Execute full git reset on all /opt dirs
+#  ansible.builtin.shell:
+#    cmd: cd "{{ item.path }}" && git reset --hard && git clean -fdx
+#  loop: "{{ found_dirs.files }}"
+#  register: reset_output
+#  failed_when:
+#    - reset_output.failed
+#    - not 'No stash entries found' in unstash_output.stderr
 
-- name: Execute full git reset on all /opt dirs
-  ansible.builtin.shell:
-    cmd: cd "{{ item.path }}" && git reset --hard && git clean -fdx
-  loop: "{{ found_dirs.files }}"
+- name: Find git repos in /opt
+  ansible.builtin.find:
+    paths: "/opt"
+    file_type: directory
+    patterns: ".git"
+    recurse: yes
+  register: git_dirs
+
+- name: Reset and Clean all found git repos in /opt
+  ansible.builtin.shell: cd {{ item }} && git reset --hard && git clean -fdx
+  loop: "{{ git_dirs.files | map(attribute='path') | map('dirname') | unique }}"
+  loop_control:
+    loop_var: item
+
 
 # Downloading and setting up git repos
 
