@@ -411,11 +411,6 @@ common_git_repos:
     }
   - {
       path: "/opt",
-      dir_name: "Responder",
-      repo: "https://github.com/lgandx/Responder",
-    }
-  - {
-      path: "/opt",
       dir_name: "git-dumper",
       repo: "https://github.com/arthaud/git-dumper.git",
     }
