@@ -30,6 +30,7 @@
     path: "{{ item.path }}/{{ item.dir_name }}"
     mode: 0755
     recurse: yes
+    follow: no
   loop: "{{ common_git_repos }}"
   loop_control:
     label: "{{ item.repo }}"
