@@ -551,12 +551,12 @@ common_binary_packages:
   - {
       repo: "jpillora/chisel",
       regex: "_linux_amd64.gz",
-      location: "/opt/chisel",
+      location: "/opt/chisel"
     }
   - {
       repo: "jpillora/chisel",
       regex: "_windows_amd64.gz",
-      location: "/opt/chisel",
+      location: "/opt/chisel"
     }
   - { repo: "carlospolop/PEASS-ng",
       regex: "linpeas.sh",
@@ -565,27 +565,27 @@ common_binary_packages:
   - {
       repo: "carlospolop/PEASS-ng",
       regex: "winPEASx64.exe",
-      location: "/opt/peas",
+      location: "/opt/peas"
     }
   - {
       repo: "WithSecureLabs/chainsaw",
       regex: "chainsaw_all_",
-      location: "/opt/",
+      location: "/opt/chainsaw"
     }
   - {
       repo: "BloodHoundAD/BloodHound",
       regex: "BloodHound-linux-x64.zip",
-      location: "/opt/",
+      location: "/opt/BloodHound"
     }
   - {
       repo: "michenriksen/aquatone",
       regex: "aquatone_linux_amd64_",
-      location: "/opt/aquatone",
+      location: "/opt/aquatone"
     }
   - {
       repo: "tomnomnom/assetfinder",
       regex: "assetfinder-linux-amd64",
-      location: "/opt/assetfinder",
+      location: "/opt/assetfinder"
     }
   - {
       repo: "romkatv/gitstatus",
@@ -615,12 +615,12 @@ common_binary_packages:
   - {
       repo: "DominicBreuker/pspy",
       regex: "pspy64s",
-      location: "/opt/pspy",
+      location: "/opt/pspy"
     }
   - {
       repo: "dwisiswant0/go-dork",
       regex: "go-dork",
-      location: "/opt/go-dork",
+      location: "/opt/go-dork"
     }
 
 font_urls:
