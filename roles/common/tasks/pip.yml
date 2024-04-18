@@ -13,12 +13,20 @@
   loop: "{{ common_pip_packages }}"
 
 - name: Install pipx packages
+  become_user: "{{ zsh_user }}"
+  community.general.pipx:
+    name: "{{ item }}"
+    #state: latest
+    executable: pipx
+  loop: "{{ common_pipx_packages }}"
+
+- name: Install Remote pipx packages
   community.general.pipx:
     name: "{{ item.name }}"
     source: "{{ item.url }}"
     state: latest
     #executable: python3
-  loop: "{{ common_pipx_packages }}"
+  loop: "{{ common_remotepipx_packages }}"
 
 - name: Run pipx ensurepath and completions
   become_user: "{{ zsh_user }}"

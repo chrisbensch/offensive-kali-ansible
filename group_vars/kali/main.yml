@@ -134,6 +134,11 @@ common_pip_packages:
   - requests
   - updog
 
+common_pipx_packages:
+  - coercer
+  - bloodyAD
+
+
 osint_pip_packages:
   - aiohttp
   - aiohttp_socks
@@ -440,21 +445,35 @@ common_git_repos:
       repo: "https://github.com/The-Viper-One/PsMapExec",
     }
   - {
-    path: "/opt",
-    dir_name: "usernamer",
-    repo: "https://github.com/jseidl/usernamer",
+      path: "/opt",
+      dir_name: "usernamer",
+      repo: "https://github.com/jseidl/usernamer",
     }
   - {
-    path: "/opt",
-    dir_name: "scarecrow",
-    repo: "https://github.com/Tylous/ScareCrow",
+      path: "/opt",
+      dir_name: "scarecrow",
+      repo: "https://github.com/Tylous/ScareCrow",
     }
   - {
-    path: "/opt",
-    dir_name: "ps2exe",
-    repo: "https://github.com/MScholtes/PS2EXE",
+      path: "/opt",
+      dir_name: "ps2exe",
+      repo: "https://github.com/MScholtes/PS2EXE",
     }
-
+  - {
+      path: "/opt",
+      dir_name: "FuckThatPacker",
+      repo: "https://github.com/Unknow101/FuckThatPacker",
+    }
+  - {
+      path: "/opt",
+      dir_name: "dredge",
+      repo: "https://github.com/grahamhelton/dredge",
+    }
+  - {
+      path: "/opt",
+      dir_name: "atexec-pro",
+      repo: "https://github.com/Ridter/atexec-pro",
+    }
 
 osint_git_repos:
   - {
@@ -517,7 +536,7 @@ osint_git_repos:
 common_pip_install:
   - { path: "/opt/jwt_tool" }
 
-common_pipx_packages:
+common_remotepipx_packages:
   - { name: "impacket", url: "git+https://github.com/fortra/impacket.git" }
   - { name: "netexec", url: "git+https://github.com/Pennyw0rth/NetExec" }
 
@@ -617,6 +636,16 @@ common_binary_packages:
       regex: "go-dork",
       location: "/opt/go-dork"
     }
+  - {
+      repo: "antonioCoco/RunasCs",
+      regex: "RunasCs.zip",
+      location: "/opt/RunasCs"
+    }
+  - {
+      repo: "antonioCoco/RemotePotato0",
+      regex: "RemotePotato0.zip",
+      location: "/opt/RemotePotato0"
+    } 
 
 font_urls:
   - {
