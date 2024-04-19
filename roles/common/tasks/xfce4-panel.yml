@@ -1,5 +1,12 @@
-- name: Untar xfce4 panel files
-  unarchive:
-    src: "{{ role_path }}/files/xfce4-panel-config.tar"
-    dest: "{{ ansible_env.HOME }}"
-    remote_src: yes
+- name: XFCE Configs
+  block:
+  - name: Untar xfce4 panel files
+    unarchive:
+      src: "{{ role_path }}/files/xfce4-panel-config.tar"
+      dest: "{{ ansible_env.HOME }}"
+      remote_src: yes
+
+  - name: Kill xfconfd
+    become: True  # This is necessary if killing a process requires elevated privileges
+    shell: "killall xfconfd"
+    ignore_errors: True
