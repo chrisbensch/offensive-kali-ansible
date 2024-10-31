@@ -122,7 +122,7 @@ common_pip_packages:
   #- dirhunt
   #- getsploit
   ##- github3.py
-  - ldap3
+  #- ldap3
   #- minikerberos
   #- mitm6
   #- pipenv
