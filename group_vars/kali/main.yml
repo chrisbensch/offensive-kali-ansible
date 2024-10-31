@@ -117,6 +117,26 @@ osint_apt_packages:
 
 # pip packages
 common_pip_packages:
+  #- Cython
+  #- certipy-ad
+  #- dirhunt
+  #- getsploit
+  ##- github3.py
+  #- ldap3
+  #- minikerberos
+  #- mitm6
+  #- pipenv
+  #- poetry
+  #- pypykatz
+  #- python-libpcap
+  #- python3-ldap
+  #- pywhat
+  #- requests
+  #- updog
+
+common_pipx_packages:
+  - coercer
+  - bloodyAD
   - Cython
   - certipy-ad
   - dirhunt
@@ -133,10 +153,6 @@ common_pip_packages:
   - pywhat
   - requests
   - updog
-
-common_pipx_packages:
-  - coercer
-  - bloodyAD
 
 
 osint_pip_packages:

@@ -1,8 +1,8 @@
-- name: Install and upgrade pip
-  ansible.builtin.pip:
-    name: pip
-    extra_args: --upgrade
-    executable: pip3
+#- name: Install and upgrade pip
+#  ansible.builtin.pip:
+#    name: pip
+#    extra_args: --upgrade
+#    executable: pip3
 
 - name: Install python pip packages
   become_user: "{{ zsh_user }}"
@@ -17,7 +17,8 @@
   community.general.pipx:
     name: "{{ item }}"
     #state: latest
-    executable: pipx
+    #executable: pipx
+    cmd: "pipx install {{ item }} --include-deps"
   loop: "{{ common_pipx_packages }}"
 
 - name: Install Remote pipx packages
