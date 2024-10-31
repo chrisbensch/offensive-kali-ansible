@@ -4,13 +4,13 @@
 #    extra_args: --upgrade
 #    executable: pip3
 
-#- name: Install python pip packages
-#  become_user: "{{ zsh_user }}"
-#  ansible.builtin.pip:
-#    name: "{{ item }}"
-#    state: latest
-#    executable: pip3
-#  loop: "{{ common_pip_packages }}"
+- name: Install python pip packages
+  become_user: "{{ zsh_user }}"
+  ansible.builtin.pip:
+    name: "{{ item }}"
+    state: latest
+    executable: pip3
+  loop: "{{ common_pip_packages }}"
 
 - name: Install pipx packages
   become_user: "{{ zsh_user }}"
