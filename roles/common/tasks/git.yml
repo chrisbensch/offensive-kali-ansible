@@ -78,10 +78,10 @@
       loop_control:
         label: "{{item.path}}"
 
-    - name: Install pip dependencies for required git repos
-      ansible.builtin.command: python3 -m pip install -r requirements.txt
-      args:
-        chdir: "{{item.path}}"
-      loop: "{{common_pip_install}}"
-      loop_control:
-        label: "{item.path}"
+    #- name: Install pip dependencies for required git repos
+    #  ansible.builtin.command: python3 -m pip install -r requirements.txt
+    #  args:
+    #    chdir: "{{item.path}}"
+    #  loop: "{{common_pip_install}}"
+    #  loop_control:
+    #    label: "{item.path}"

@@ -47,6 +47,7 @@ common_kali_packages:
   - nbtscan-unixwiz
   - ncat
   - neo4j
+  - netexec
   - npm
   - ntpdate
   - nuclei
@@ -549,8 +550,8 @@ osint_git_repos:
     }
 
 
-common_pip_install:
-  - { path: "/opt/jwt_tool" }
+#common_pip_install:
+#  - { path: "/opt/jwt_tool" }
 
 common_remotepipx_packages:
   - { name: "impacket", url: "git+https://github.com/fortra/impacket.git" }
