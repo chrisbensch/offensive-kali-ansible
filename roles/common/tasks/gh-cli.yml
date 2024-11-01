@@ -3,7 +3,7 @@
   apt:
     name:
       - apt-transport-https
-      - software-properties-common
+      #- software-properties-common
     state: present
 
 - name: Import GitHub CLI GPG key
