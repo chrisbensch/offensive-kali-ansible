@@ -4,7 +4,7 @@
 # the github3.py module if installed during a playbook.  The below should
 # be temporary.
 
-sudo pip3 install github3.py
+pipx install github3.py --include-deps && pipx ensurepath
 
 # Qterminal seems to overwrite it's settings when closed so I do the install
 # from Xterm to ensure there are no issues.
