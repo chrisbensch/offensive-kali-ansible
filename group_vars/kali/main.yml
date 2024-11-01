@@ -142,7 +142,7 @@ common_pipx_packages:
   - certipy-ad
   - dirhunt
   - getsploit
-  #- github3.py
+  - github3.py
   #- ldap3
   - minikerberos
   - mitm6
