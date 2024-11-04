@@ -6,10 +6,12 @@
 #      #- software-properties-common
 #    state: present
 
-#- name: Import GitHub CLI GPG key
-#  ansible.builtin.apt_key:
-#    url: https://cli.github.com/packages/githubcli-archive-keyring.gpg
-#    state: present
+- name: Import GitHub CLI GPG key
+  ansible.builtin.apt_key:
+    url: https://cli.github.com/packages/githubcli-archive-keyring.gpg
+    state: present
+
+# apt_key doesn't seem to work
 - name: Add an apt key for gh cli from a keyserver
       ansible.builtin.apt_key:
         keyserver: keyserver.ubuntu.com
