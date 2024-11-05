@@ -1,5 +1,8 @@
 ---
 - name: Install the latest Obsidian AppImage on Kali Linux
+  vars:
+    local_icons_dir: "/home/{{ zsh_user }}/.icons"
+    local_app_dir: "/home/{{ zsh_user }}/.local/share/applications"
   block:
     - name: Get the latest release information from GitHub
       ansible.builtin.uri:
@@ -24,3 +27,35 @@
         src: /usr/local/bin/obsidian.AppImage
         dest: /usr/local/bin/obsidian
         state: link
+    
+    - name: Ensure local icon directory exists
+      file:
+        path: "{{ local_icons_dir }}"
+        state: directory
+
+    - name: Copy Obsidian Icon
+      copy:
+        src: "{{ role_path }}/files/obsidian.png"
+        dest: "{{ local_icons_dir }}"
+        mode: '0644'
+    
+    - name: Ensure local app directory exists
+      file:
+        path: "{{ local_app_dir }}"
+        state: directory
+    
+    - name: Add Obsidian to the XFCE menu
+      copy:
+        content: |
+          [Desktop Entry]
+          Version=1.0
+          Type=Application
+          Name=Obsidian
+          Icon=obsidian
+          Exec=/usr/local/bin/obsidian
+          Comment=Obsidian Personal Knowledge Management
+          Categories=Office;
+          Terminal=false
+        dest: "{{ local_app_dir }}/obsidian.desktop"
+        mode: '0644'
+    
