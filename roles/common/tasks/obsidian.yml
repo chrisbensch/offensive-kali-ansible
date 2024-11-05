@@ -1,59 +1,26 @@
 ---
-- name: Download and Install Obsidian AppImage
-  vars:
-    obsidian_appimage_download_dir: "/opt/Obsidian"
-    obsidian_appimage_url: "https://github.com/obsidianmd/obsidian-releases/releases//download/{{ obsidian_latest['tag'] }}/Obsidian-{{ obsidian_latest['tag'] | regex_replace('^v','') }}.AppImage"
-    obsidian_appimage_name: "Obsidian.AppImage"
-    obsidian_appimage_path: "{{ obsidian_appimage_download_dir }}/{{ obsidian_appimage_name }}"
-    local_app_dir: "/home/{{ zsh_user }}/.local/share/applications"
-    local_icons_dir: "/home/{{ zsh_user }}/.icons"
-  block:
-    - name: Ensure download directory exists
-      file:
-        path: "{{ obsidian_appimage_download_dir }}"
-        state: directory
+- name: Install the latest Obsidian AppImage on Kali Linux
+  tasks:
+    - name: Get the latest release information from GitHub
+      ansible.builtin.uri:
+        url: https://api.github.com/repos/obsidianmd/obsidian-releases/releases/latest
+        return_content: yes
+      register: release_info
 
-    - name: Get Obsidian latest tag 
-      community.general.github_release:
-        user: obsidianmd
-        repo: obsidian-releases
-        action: latest_release
-      register: obsidian_latest 
+    - name: Extract the download URL for the AppImage
+      set_fact:
+        appimage_url: "{{ item.browser_download_url }}"
+      loop: "{{ release_info.json.assets }}"
+      when: "'AppImage' in item.name"
 
-    - name: Grab Obsidian latest binaries 
-      get_url:
-        url: "{{ obsidian_appimage_url }}"
-        dest: "{{ obsidian_appimage_download_dir }}/{{ obsidian_appimage_name }}"
-        mode: "0755"
-    
-    - name: Ensure local app directory exists
-      file:
-        path: "{{ local_app_dir }}"
-        state: directory
+    - name: Download the latest Obsidian AppImage
+      ansible.builtin.get_url:
+        url: "{{ appimage_url }}"
+        dest: /usr/local/bin/obsidian.AppImage
+        mode: '0755'
 
-    - name: Ensure local icon directory exists
-      file:
-        path: "{{ local_icons_dir }}"
-        state: directory
-    
-    - name: Copy Obsidian Icon
-      copy:
-        src: "{{ role_path }}/files/obsidian.png"
-        dest: "{{ local_icons_dir }}"
-        mode: '0644'
-
-    - name: Add Obsidian to the XFCE menu
-      copy:
-        content: |
-          [Desktop Entry]
-          Version=1.0
-          Type=Application
-          Name=Obsidian
-          Icon=obsidian
-          Exec="{{ obsidian_appimage_path }}"
-          Comment=Obsidian Personal Knowledge Management
-          Categories=Office;
-          Terminal=false
-        dest: "{{ local_app_dir }}/obsidian.desktop"
-        mode: '0644'
-
+    - name: Create a symlink for Obsidian (optional)
+      ansible.builtin.file:
+        src: /usr/local/bin/obsidian.AppImage
+        dest: /usr/local/bin/obsidian
+        state: link
