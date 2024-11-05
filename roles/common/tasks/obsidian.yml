@@ -1,26 +1,25 @@
 ---
 - name: Install the latest Obsidian AppImage on Kali Linux
-  tasks:
-    - name: Get the latest release information from GitHub
-      ansible.builtin.uri:
-        url: https://api.github.com/repos/obsidianmd/obsidian-releases/releases/latest
-        return_content: yes
-      register: release_info
+  - name: Get the latest release information from GitHub
+    ansible.builtin.uri:
+      url: https://api.github.com/repos/obsidianmd/obsidian-releases/releases/latest
+      return_content: yes
+    register: release_info
 
-    - name: Extract the download URL for the AppImage
-      set_fact:
-        appimage_url: "{{ item.browser_download_url }}"
-      loop: "{{ release_info.json.assets }}"
-      when: "'AppImage' in item.name"
+  - name: Extract the download URL for the AppImage
+    set_fact:
+      appimage_url: "{{ item.browser_download_url }}"
+    loop: "{{ release_info.json.assets }}"
+    when: "'AppImage' in item.name"
 
-    - name: Download the latest Obsidian AppImage
-      ansible.builtin.get_url:
-        url: "{{ appimage_url }}"
-        dest: /usr/local/bin/obsidian.AppImage
-        mode: '0755'
+  - name: Download the latest Obsidian AppImage
+    ansible.builtin.get_url:
+      url: "{{ appimage_url }}"
+      dest: /usr/local/bin/obsidian.AppImage
+      mode: '0755'
 
-    - name: Create a symlink for Obsidian (optional)
-      ansible.builtin.file:
-        src: /usr/local/bin/obsidian.AppImage
-        dest: /usr/local/bin/obsidian
-        state: link
+  - name: Create a symlink for Obsidian (optional)
+    ansible.builtin.file:
+      src: /usr/local/bin/obsidian.AppImage
+      dest: /usr/local/bin/obsidian
+      state: link
