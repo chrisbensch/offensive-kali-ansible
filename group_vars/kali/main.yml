@@ -142,15 +142,12 @@ common_pipx_packages:
   - certipy-ad
   - dirhunt
   - getsploit
-  - github3.py
-  #- ldap3
   - minikerberos
   - mitm6
   - pipenv
   - poetry
   - pypykatz
   - python-libpcap
-  #- python3-ldap
   - pywhat
   - requests
   - updog
@@ -277,6 +274,7 @@ common_git_repos:
       repo: "https://github.com/dionach/CMSmap.git",
     }
 
+  # Broken
   #- {
   #    path: "/opt",
   #    dir_name: "jwt_tool",
@@ -566,7 +564,7 @@ common_python_setup:
 osint_python_setup:
 
 common_go_tools:
-#  - { tool: "CloudBrute", repo: "github.com/0xsha/CloudBrute@latest" }
+  - { tool: "CloudBrute", repo: "github.com/0xsha/cloudbrute@latest" }
   - { tool: "gitleaks", repo: "github.com/zricethezav/gitleaks@latest" }
   - { tool: "hakrawler", repo: "github.com/hakluke/hakrawler@latest" }
   - { tool: "kerbrute", repo: "github.com/ropnop/kerbrute@latest" }

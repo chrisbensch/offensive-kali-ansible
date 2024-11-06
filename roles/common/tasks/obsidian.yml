@@ -35,7 +35,7 @@
 
     - name: Copy Obsidian Icon
       copy:
-        src: "{{ role_path }}/files/obsidian.ico"
+        src: "{{ role_path }}/files/obsidian.png"
         dest: "{{ local_icons_dir }}"
         mode: '0644'
     
