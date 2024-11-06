@@ -1,22 +1,50 @@
 ---
-- name: Import GitHub CLI GPG key
-  #ansible.builtin.apt_key:
-  #  url: https://cli.github.com/packages/githubcli-archive-keyring.gpg
-  #  state: present
-  get_url:
-    url:  https://cli.github.com/packages/githubcli-archive-keyring.gpg
-    dest: /etc/apt/trusted.gpg.d/githubcli-archive-keyring.asc
-
-- name: Add gh cli repository into sources list
-  ansible.builtin.apt_repository:
-    repo: deb [signed-by=/etc/apt/trusted.gpg.d/githubcli-archive-keyring.asc] https://cli.github.com/packages focal main
-    state: present
-
-- name: Ensure gh is at the latest version
-  ansible.builtin.apt:
-    name: gh
-    state: latest
+#- name: Import GitHub CLI GPG key
+#  #ansible.builtin.apt_key:
+#  #  url: https://cli.github.com/packages/githubcli-archive-keyring.gpg
+#  #  state: present
+#  get_url:
+#    url:  https://cli.github.com/packages/githubcli-archive-keyring.gpg
+#    dest: /etc/apt/trusted.gpg.d/githubcli-archive-keyring.asc
+#
+#- name: Add gh cli repository into sources list
+#  ansible.builtin.apt_repository:
+#    repo: deb [signed-by=/etc/apt/trusted.gpg.d/githubcli-archive-keyring.asc] https://cli.github.com/packages focal main
+#    state: present
+#
+#- name: Ensure gh is at the latest version
+#  ansible.builtin.apt:
+#    name: gh
+#    state: latest
 
 # Errors about legacy trusted.gpg keyring fix
 # sudo apt-key export 75716059 | sudo gpg --dearmor -o /etc/apt/trusted.gpg.d/githubcli-archive-keyring.gpg
 # sudo apt-key --keyring /etc/apt/trusted.gpg del 75716059
+
+# ChatGPT helped
+- name: Ensure the /etc/apt/keyrings directory exists with correct permissions
+  ansible.builtin.file:
+    path: /etc/apt/keyrings
+    state: directory
+    mode: '0755'
+
+- name: Download the GitHub CLI GPG key and save it to /etc/apt/keyrings
+  ansible.builtin.get_url:
+    url: https://cli.github.com/packages/githubcli-archive-keyring.gpg
+    dest: /etc/apt/keyrings/githubcli-archive-keyring.gpg
+    mode: '0644'
+
+- name: Add the GitHub CLI repository to sources list
+  ansible.builtin.apt_repository:
+    repo: "deb [arch={{ ansible_architecture }} signed-by=/etc/apt/keyrings/githubcli-archive-keyring.gpg] https://cli.github.com/packages stable main"
+    filename: github-cli
+
+- name: Update the apt cache
+  ansible.builtin.apt:
+    update_cache: yes
+
+- name: Install GitHub CLI
+  ansible.builtin.apt:
+    name: gh
+    state: present
+    update_cache: yes

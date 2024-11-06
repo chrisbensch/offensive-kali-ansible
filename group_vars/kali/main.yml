@@ -71,6 +71,7 @@ common_kali_packages:
   - starkiller
   - sublist3r
   - tk-dev
+  - trufflehog
   - xz-utils
   - zlib1g-dev
   - zsh
