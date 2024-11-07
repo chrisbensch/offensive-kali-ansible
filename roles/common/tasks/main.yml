@@ -47,9 +47,9 @@
   become: True
   ansible.builtin.import_tasks: gh-cli.yml
 
-- name: Install Obsidian
-  become: True
-  ansible.builtin.import_tasks: obsidian.yml
+#- name: Install Obsidian
+#  become: True
+#  ansible.builtin.import_tasks: obsidian.yml
 
 - name: Restore xfce4 panel
   become: false

@@ -51,6 +51,7 @@ common_kali_packages:
   - npm
   - ntpdate
   - nuclei
+  - obsidian
   - openssl
   - osslsigncode
   - parallel
