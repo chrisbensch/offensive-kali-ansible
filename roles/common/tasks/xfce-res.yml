@@ -17,7 +17,7 @@
         state: directory
         owner: kali
         group: kali
-        mode: '0644'
+        mode: '0755'
     
     - name: Make resolution persistent by creating an autostart file
       copy:
@@ -35,4 +35,4 @@
           Comment=Sets the display resolution on startup
         owner: kali
         group: kali
-        mode: '0644'
+        mode: '0755'
