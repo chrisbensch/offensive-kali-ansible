@@ -31,4 +31,4 @@
           Name=Set Resolution
           Comment[en_US]=Sets the display resolution on startup
           Comment=Sets the display resolution on startup
-      mode: '0644'
+        mode: '0644'
