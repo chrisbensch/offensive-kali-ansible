@@ -42,4 +42,4 @@
           Name=Set Custom Resolution
           Comment[en_US]=Sets a custom display resolution on startup
           Comment=Sets a custom display resolution on startup
-      mode: '0644'
+        mode: '0644'
