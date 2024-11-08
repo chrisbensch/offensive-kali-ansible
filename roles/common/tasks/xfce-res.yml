@@ -13,6 +13,12 @@
       set_fact:
         mode_name: "{{ modeline.split()[0] }}"
 
+    - name: Create the autostart directory if it does not exist
+      ansible.builtin.file:
+        path: /home/kali/.config/autostart
+        state: directory
+        mode: '0755'
+
     - name: Add new mode to xrandr
       command: xrandr --newmode {{ modeline }}
       args:
