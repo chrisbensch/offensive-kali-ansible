@@ -16,21 +16,21 @@
     - name: Add new mode to xrandr
       command: xrandr --newmode {{ modeline }}
       args:
-        creates: "/home/{{ ansible_user }}/.config/autostart/set-resolution.desktop"
+        creates: "/home/kali/.config/autostart/set-resolution.desktop"
 
     - name: Attach new mode to display
       command: xrandr --addmode Virtual1 {{ mode_name }}
       args:
-        creates: "/home/{{ ansible_user }}/.config/autostart/set-resolution.desktop"
+        creates: "/home/kali/.config/autostart/set-resolution.desktop"
 
     - name: Set display to custom resolution
       command: xrandr --output Virtual1 --mode {{ mode_name }}
       args:
-        creates: "/home/{{ ansible_user }}/.config/autostart/set-resolution.desktop"
+        creates: "/home/kali/.config/autostart/set-resolution.desktop"
 
     - name: Make custom resolution persistent by creating an autostart file
       copy:
-        dest: "/home/{{ ansible_user }}/.config/autostart/set-resolution.desktop"
+        dest: "/home/kali/.config/autostart/set-resolution.desktop"
         content: |
           [Desktop Entry]
           Type=Application
