@@ -59,3 +59,7 @@
 - name: Configure ZSH Environment
   become: True
   ansible.builtin.import_tasks: zsh-env.yml
+
+- name: Set display resolution on XFCE4
+  become: True
+  ansible.builtin.import_tasks: xfce-res.yml
