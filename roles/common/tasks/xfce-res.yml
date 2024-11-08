@@ -1,51 +1,34 @@
 ---
-- name: Set custom display resolution on XFCE4
+- name: Set display resolution on XFCE4
   block:
-    - name: Generate modeline for custom resolution
-      command: cvt 2560 1700
-      register: cvt_output
+    - name: Check available displays and resolutions
+      command: xrandr
+      register: xrandr_output
 
-    - name: Extract modeline from cvt output
-      set_fact:
-        modeline: "{{ cvt_output.stdout.split('\n')[-1] | regex_replace('Modeline ', '') | regex_replace('\"', '') }}"
+    - name: Set display resolution
+      command: xrandr --output Virtual1 --mode 2560x1600
+      args:
+        creates: "/home/kali/.config/autostart/set-resolution.desktop"
+      when: "'2560x1600' in xrandr_output.stdout"
 
-    - name: Extract mode name from modeline
-      set_fact:
-        mode_name: "{{ modeline.split()[0] }}"
-
-    - name: Create the autostart directory if it does not exist
+    - name: Create the directory if it does not exist
       ansible.builtin.file:
-        path: /home/kali/.config/autostart
+        path: "/home/kali/.config/autostart"
         state: directory
-        mode: '0755'
-
-    - name: Add new mode to xrandr
-      command: xrandr --newmode {{ modeline }}
-      args:
-        creates: "/home/kali/.config/autostart/set-resolution.desktop"
-
-    - name: Attach new mode to display
-      command: xrandr --addmode Virtual1 {{ mode_name }}
-      args:
-        creates: "/home/kali/.config/autostart/set-resolution.desktop"
-
-    - name: Set display to custom resolution
-      command: xrandr --output Virtual1 --mode {{ mode_name }}
-      args:
-        creates: "/home/kali/.config/autostart/set-resolution.desktop"
-
-    - name: Make custom resolution persistent by creating an autostart file
+        mode: '0644'
+    
+    - name: Make resolution persistent by creating an autostart file
       copy:
         dest: "/home/kali/.config/autostart/set-resolution.desktop"
         content: |
           [Desktop Entry]
           Type=Application
-          Exec=xrandr --newmode {{ modeline }} && xrandr --addmode Virtual1 {{ mode_name }} && xrandr --output Virtual1 --mode {{ mode_name }}
+          Exec=xrandr --output Virtual1 --mode 2560x1600
           Hidden=false
           NoDisplay=false
           X-GNOME-Autostart-enabled=true
-          Name[en_US]=Set Custom Resolution
-          Name=Set Custom Resolution
-          Comment[en_US]=Sets a custom display resolution on startup
-          Comment=Sets a custom display resolution on startup
-        mode: '0644'
+          Name[en_US]=Set Resolution
+          Name=Set Resolution
+          Comment[en_US]=Sets the display resolution on startup
+          Comment=Sets the display resolution on startup
+      mode: '0644'
