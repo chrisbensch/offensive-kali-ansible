@@ -3,9 +3,8 @@
 
 # Qterminal seems to overwrite it's settings when closed so I do the install
 # from Xterm to ensure there are no issues.
-# but not anymore?
 
-sudo apt update && sudo apt -y install ansible-core #xterm
+sudo apt update && sudo apt -y install ansible-core xterm
 
 # This installs the two external roles I need.
 ansible-galaxy install -r requirements.yml
