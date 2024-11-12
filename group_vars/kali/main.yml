@@ -5,6 +5,7 @@ zsh_user: kali
 # common apt packages to install
 common_kali_packages:
   - assetfinder
+  - autorecon
   - awscli
   - bettercap
   - bloodhound
@@ -24,6 +25,7 @@ common_kali_packages:
   - git
   - gobuster
   - golang
+  - grc
   - jd-gui
   - joomscan
   - jq
@@ -68,7 +70,9 @@ common_kali_packages:
   - python3-venv
   - rust-all
   - seclists
+  - sherlock
   - spiderfoot
+  - sshuttle
   - starkiller
   - sublist3r
   - tk-dev
@@ -491,6 +495,11 @@ common_git_repos:
       dir_name: "atexec-pro",
       repo: "https://github.com/Ridter/atexec-pro",
     }
+  - {
+      path: "/opt",
+      dir_name: "nishang",
+      repo: "https://github.com/samratashok/nishang",
+    }
 
 osint_git_repos:
   - {
@@ -556,6 +565,7 @@ osint_git_repos:
 common_remotepipx_packages:
   - { name: "impacket", url: "git+https://github.com/fortra/impacket.git" }
   #- { name: "netexec", url: "git+https://github.com/Pennyw0rth/NetExec" }
+  - { name: "autorecon", url: "git+https://github.com/Tib3rius/AutoRecon.git" }
 
 
 osint_pip_install:
@@ -574,6 +584,7 @@ common_go_tools:
   - { tool: "subjack", repo: "github.com/haccer/subjack@latest" }
 #  - { tool: "trufflehog", repo: "github.com/trufflesecurity/trufflehog@latest" }
   - { tool: "waybackurls", repo: "github.com/tomnomnom/waybackurls@latest" }
+  - { tool: "chisel", repo: "github.com/jpillora/chisel@latest" }
 
 
 osint_go_tools:
