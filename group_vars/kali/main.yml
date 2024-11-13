@@ -1,5 +1,5 @@
 ---
-# zsh_setup
+# user_setup
 kali_user: kali
 
 # common apt packages to install
@@ -632,7 +632,7 @@ common_binary_packages:
   - {
       repo: "romkatv/gitstatus",
       regex: "linux-x86_64.tar.gz",
-      location: "{{ zsh_user }}/.cache/gitstatus/"
+      location: "{{ kali_user }}/.cache/gitstatus/"
     }
   - {
       repo: "lkarlslund/Adalanche",
