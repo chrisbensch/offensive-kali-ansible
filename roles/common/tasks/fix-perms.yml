@@ -5,7 +5,6 @@
         paths: /opt
         recurse: yes
         file_type: file
-        quiet: true
       register: files_to_chown
 
     - name: Change file ownership to user 'kali' and group 'kali'
