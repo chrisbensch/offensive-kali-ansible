@@ -1,6 +1,5 @@
 ---
 - name: Update and upgrade Debian-based system
-  become: true  # This is required to gain root privileges
   block:
     - name: Update apt repo and cache on all Debian/Ubuntu boxes
       ansible.builtin.apt:
