@@ -584,7 +584,7 @@ common_go_tools:
   - { tool: "subjack", repo: "github.com/haccer/subjack@latest" }
 #  - { tool: "trufflehog", repo: "github.com/trufflesecurity/trufflehog@latest" }
   - { tool: "waybackurls", repo: "github.com/tomnomnom/waybackurls@latest" }
-  - { tool: "chisel", repo: "github.com/jpillora/chisel@latest" }
+  #- { tool: "chisel", repo: "github.com/jpillora/chisel@latest" }
 
 
 osint_go_tools:

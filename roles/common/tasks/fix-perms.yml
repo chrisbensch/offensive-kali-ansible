@@ -1,0 +1,31 @@
+- name: Fix /opt perms
+block:
+  - name: Find all files in /opt
+    ansible.builtin.find:
+      paths: /opt
+      recurse: yes
+      file_type: file
+    register: files_to_chown
+
+  - name: Change file ownership to user 'kali' and group 'kali'
+    ansible.builtin.file:
+      path: "{{ item.path }}"
+      owner: 'kali'
+      group: 'kali'
+    loop: "{{ files_to_chown.files }}"
+
+- name: Fix home perms
+block:
+  - name: Find all files in /opt
+    ansible.builtin.find:
+      paths: /home/kali
+      recurse: yes
+      file_type: file
+    register: files_to_chown
+
+  - name: Change file ownership to user 'kali' and group 'kali'
+    ansible.builtin.file:
+      path: "{{ item.path }}"
+      owner: 'kali'
+      group: 'kali'
+    loop: "{{ files_to_chown.files }}"

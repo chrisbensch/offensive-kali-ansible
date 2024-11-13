@@ -63,3 +63,7 @@
 - name: Set display resolution on XFCE4
   become: True
   ansible.builtin.import_tasks: xfce-res.yml
+
+- name: Fix Perms
+  become: True
+  ansible.builtin.import_tasks: fix-perms.yml
