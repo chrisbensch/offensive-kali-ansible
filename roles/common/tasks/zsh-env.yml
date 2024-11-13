@@ -1,23 +1,20 @@
 ---
 - name: Setup zsh Environment
   block:
-  
   - name: Include gantsign.oh-my-zsh role
     ansible.builtin.include_role:
       name: gantsign.oh-my-zsh
     vars:
       users:
-        - username: "{{ zsh_user }}"
+        - username: "{{ kali_user }}"
   
   - name: Edit .zshrc
     copy:
       src: "{{ role_path }}/files/zshrc"
       dest: "{{ ansible_env.HOME }}/.zshrc"
-      mode: '0644'
-  
+      mode: 0644
   
 #  - name: Install and configure zsh plugins
-
 
 # Install Fonts
   - name: Ensure download directory exists
