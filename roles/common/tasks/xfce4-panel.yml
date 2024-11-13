@@ -6,7 +6,9 @@
       dest: "{{ ansible_env.HOME }}"
       remote_src: yes
 
-  - name: Kill xfconfd
-    become: True  # This is necessary if killing a process requires elevated privileges
-    shell: "killall xfconfd"
-    ignore_errors: True
+#  - name: Kill xfconfd
+#    become: True  # This is necessary if killing a process requires elevated privileges
+#    shell: "killall xfconfd"
+#    ignore_errors: True
+
+# Just reboot instead
