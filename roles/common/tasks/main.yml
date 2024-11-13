@@ -10,6 +10,10 @@
 - name: Fix /etc/sudoers
   become: True
   ansible.builtin.import_tasks: sudo.yml
+
+- name: Fix /etc/needrestart/notify.conf
+  become: True
+  ansible.builtin.import_tasks: notifyd-disable.yml
   
 - name: apt Tasks
   become: True
