@@ -28,8 +28,8 @@
 
 - name: Set new file privileges -- recursive
   ansible.builtin.file:
-    owner: "{{ zsh_user }}"
-    group: "{{ zsh_user }}"
+    owner: "{{ kali_user }}"
+    group: "{{ kali_user }}"
     path: "{{ item.location }}"
     mode: 0755
     recurse: yes

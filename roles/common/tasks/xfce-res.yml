@@ -8,20 +8,20 @@
     - name: Set display resolution
       command: xrandr --output Virtual1 --mode 2560x1600
       args:
-        creates: "/home/kali/.config/autostart/set-resolution.desktop"
+        creates: "/home/{{ kali_user }}/.config/autostart/set-resolution.desktop"
       when: "'2560x1600' in xrandr_output.stdout"
 
     - name: Create the directory if it does not exist
       ansible.builtin.file:
-        path: "/home/kali/.config/autostart"
+        path: "/home/{{ kali_user }}/.config/autostart"
         state: directory
-        owner: kali
-        group: kali
-        mode: '0755'
+        owner: "{{ kali_user }}"
+        group: "{{ kali_user }}"
+        mode: 0755
     
     - name: Make resolution persistent by creating an autostart file
       copy:
-        dest: "/home/kali/.config/autostart/set-resolution.desktop"
+        dest: "/home/{{ kali_user }}/.config/autostart/set-resolution.desktop"
         content: |
           [Desktop Entry]
           Type=Application
@@ -33,6 +33,6 @@
           Name=Set Resolution
           Comment[en_US]=Sets the display resolution on startup
           Comment=Sets the display resolution on startup
-        owner: kali
-        group: kali
-        mode: '0755'
+        owner: "{{ kali_user }}"
+        group: "{{ kali_user }}"
+        mode: 0755

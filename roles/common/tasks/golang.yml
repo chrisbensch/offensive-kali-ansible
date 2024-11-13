@@ -1,6 +1,5 @@
 ---
 # Install golang packages
-
 - name: Install golang tools
   ansible.builtin.command:
     cmd: go install "{{ item.repo }}"

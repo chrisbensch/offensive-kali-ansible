@@ -1,20 +1,4 @@
 ---
-# Resetting and Cleaning all git repos first
-#- name: Find all directories in /opt
-#  ansible.builtin.find:
-#    paths: /opt
-#    file_type: directory
-#  register: found_dirs
-#
-#- name: Execute full git reset on all /opt dirs
-#  ansible.builtin.shell:
-#    cmd: cd "{{ item.path }}" && git reset --hard && git clean -fdx
-#  loop: "{{ found_dirs.files }}"
-#  register: reset_output
-#  failed_when:
-#    - reset_output.failed
-#    - not 'No stash entries found' in unstash_output.stderr
-
 - name: Find git repos in /opt
   ansible.builtin.find:
     paths: "/opt"
@@ -29,9 +13,7 @@
   loop_control:
     loop_var: item
 
-
 # Downloading and setting up git repos
-
 - name: Install tools from github and set permissions
   block:
     - name: Create a directory for each tool to be installed
@@ -77,11 +59,3 @@
       loop: "{{common_python_setup}}"
       loop_control:
         label: "{{item.path}}"
-
-    #- name: Install pip dependencies for required git repos
-    #  ansible.builtin.command: python3 -m pip install -r requirements.txt
-    #  args:
-    #    chdir: "{{item.path}}"
-    #  loop: "{{common_pip_install}}"
-    #  loop_control:
-    #    label: "{item.path}"

@@ -1,8 +1,9 @@
 ---
+# No longer used
 - name: Install the latest Obsidian AppImage on Kali Linux
   vars:
-    local_icons_dir: "/home/{{ zsh_user }}/.icons"
-    local_app_dir: "/home/{{ zsh_user }}/.local/share/applications"
+    local_icons_dir: "/home/{{ kali_user }}/.icons"
+    local_app_dir: "/home/{{ kali_user }}/.local/share/applications"
   block:
     - name: Get the latest release information from GitHub
       ansible.builtin.uri:

@@ -29,9 +29,9 @@
     ansible.builtin.get_url:
       url: "{{ item.url }}"
       dest: "{{ item.dest }}"
-      owner: "{{ zsh_user }}"
-      group: "{{ zsh_user }}"
-      mode: '0644'
+      owner: "{{ kali_user }}"
+      group: "{{ kali_user }}"
+      mode: 0644
     loop: "{{ font_urls }}"
 
 # Install PowerLevel10k
@@ -59,7 +59,7 @@
     copy:
       src: "{{ role_path }}/files/p10k.zsh"
       dest: "{{ ansible_env.HOME }}/.p10k.zsh"
-      mode: '0644'
+      mode: 0644
   
   
   

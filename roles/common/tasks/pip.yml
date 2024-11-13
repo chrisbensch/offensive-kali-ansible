@@ -1,19 +1,6 @@
-#- name: Install and upgrade pip
-#  ansible.builtin.pip:
-#    name: pip
-#    extra_args: --upgrade
-#    executable: pip3
-
-#- name: Install python pip packages
-#  become_user: "{{ zsh_user }}"
-#  ansible.builtin.pip:
-#    name: "{{ item }}"
-#    state: latest
-#    executable: pip3
-#  loop: "{{ common_pip_packages }}"
-
+---
 - name: Install pipx packages
-  become_user: "{{ zsh_user }}"
+  become_user: "{{ kali_user }}"
   community.general.pipx:
     name: "{{ item }}"
     #state: latest
@@ -30,7 +17,7 @@
   loop: "{{ common_remotepipx_packages }}"
 
 - name: Run pipx ensurepath and completions
-  become_user: "{{ zsh_user }}"
+  become_user: "{{ kali_user }}"
   ansible.builtin.shell: pipx ensurepath && pipx completions
   args:
     executable: /bin/zsh

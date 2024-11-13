@@ -1,6 +1,6 @@
 ---
 # zsh_setup
-zsh_user: kali
+kali_user: kali
 
 # common apt packages to install
 common_kali_packages:

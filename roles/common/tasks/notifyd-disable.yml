@@ -1,3 +1,4 @@
+---
 - name: Add line to the end of /etc/needrestart/notify.conf
   ansible.builtin.lineinfile:
     path: /etc/needrestart/notify.conf

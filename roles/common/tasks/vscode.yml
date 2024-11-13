@@ -3,7 +3,7 @@
     name: gantsign.visual-studio-code
   vars:
     users:
-      - username: "{{ ansible_user_id }}"
+      - username: "{{ kali_user }}"
         visual_studio_code_extensions:
           - IronGeek.vscode-env
           - Tyriar.sort-lines
@@ -28,11 +28,11 @@
 
 - name: Write data to a file
   ansible.builtin.copy:
-    dest: "/home/{{ zsh_user }}/.config/Code/User/settings.json"
+    dest: "/home/{{ kali_user }}/.config/Code/User/settings.json"
     content: |
       {
         "workbench.colorTheme": "Cobalt2"
       } 
-    owner: "{{ zsh_user }}"
-    group: "{{ zsh_user }}"
+    owner: "{{ kali_user }}"
+    group: "{{ kali_user }}"
     mode: '0644'
