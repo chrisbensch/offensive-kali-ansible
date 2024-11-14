@@ -59,7 +59,6 @@
   become: false
   ansible.builtin.import_tasks: xfce4-panel.yml
 
-
 - name: Configure ZSH Environment
   become: True
   ansible.builtin.import_tasks: zsh-env.yml

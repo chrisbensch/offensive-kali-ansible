@@ -2,6 +2,7 @@
 # user_setup
 kali_user: kali
 
+
 # common apt packages to install
 common_kali_packages:
   - assetfinder
@@ -82,6 +83,7 @@ common_kali_packages:
   - zsh
   - zsh-syntax-highlighting
 
+
 osint_apt_packages:
   - cargo
   - cherrytree
@@ -122,24 +124,10 @@ osint_apt_packages:
   - webhttrack
   - wireshark
 
+
 # pip packages
 common_pip_packages:
-  #- Cython
-  #- certipy-ad
-  #- dirhunt
-  #- getsploit
-  ##- github3.py
-  #- ldap3
-  #- minikerberos
-  #- mitm6
-  #- pipenv
-  #- poetry
-  #- pypykatz
-  #- python-libpcap
-  #- python3-ldap
-  #- pywhat
-  #- requests
-  #- updog
+
 
 common_pipx_packages:
   - coercer
@@ -195,17 +183,16 @@ osint_pip_packages:
   - youtube-dl
   - yt-dlp
 
+
 # Gem Packages -- still needs added as task
 common_gem_packages:
   - evil-winrm
   - pass-station
   - wpscan
 
+
 osint_gem_packages:
 
-# Group ownership for the tools that are installed directly to /opt
-group: kali
-user: kali
 
 # Common Role git repos
 common_git_repos:
@@ -279,13 +266,6 @@ common_git_repos:
       dir_name: "CMSmap",
       repo: "https://github.com/dionach/CMSmap.git",
     }
-
-  # Broken
-  #- {
-  #    path: "/opt",
-  #    dir_name: "jwt_tool",
-  #    repo: "https://github.com/ticarpi/jwt_tool.git",
-  #  }
   - {
       path: "/opt",
       dir_name: "SleuthQL",
@@ -564,16 +544,17 @@ osint_git_repos:
 
 common_remotepipx_packages:
   - { name: "impacket", url: "git+https://github.com/fortra/impacket.git" }
-  #- { name: "netexec", url: "git+https://github.com/Pennyw0rth/NetExec" }
-  #- { name: "autorecon", url: "git+https://github.com/Tib3rius/AutoRecon.git" }  Needs root to function, pipx installs for user by default.
+  - { name: "KeePwn", url: "git+https://github.com/Orange-Cyberdefense/KeePwn" }
 
 
 osint_pip_install:
+
 
 common_python_setup:
   - { path: "/opt/certipy" }
 
 osint_python_setup:
+
 
 common_go_tools:
   - { tool: "CloudBrute", repo: "github.com/0xsha/cloudbrute@latest" }
@@ -582,12 +563,11 @@ common_go_tools:
   - { tool: "kerbrute", repo: "github.com/ropnop/kerbrute@latest" }
   - { tool: "shhgit", repo: "github.com/eth0izzle/shhgit@latest" }
   - { tool: "subjack", repo: "github.com/haccer/subjack@latest" }
-#  - { tool: "trufflehog", repo: "github.com/trufflesecurity/trufflehog@latest" }
   - { tool: "waybackurls", repo: "github.com/tomnomnom/waybackurls@latest" }
-  #- { tool: "chisel", repo: "github.com/jpillora/chisel@latest" }
 
 
 osint_go_tools:
+
 
 common_binary_packages:
   - {
@@ -675,6 +655,7 @@ common_binary_packages:
       location: "/opt/RemotePotato0"
     } 
 
+
 font_urls:
   - {
       url: "https://github.com/romkatv/powerlevel10k-media/raw/master/MesloLGS%20NF%20Regular.ttf",
@@ -692,11 +673,4 @@ font_urls:
       url: "https://github.com/romkatv/powerlevel10k-media/raw/master/MesloLGS%20NF%20Bold%20Italic.ttf",
       dest: "{{ ansible_env.HOME }}/.fonts/MesloLGS NF Bold Italic.ttf",
     }
-
-
-
-
-
-
-
 
