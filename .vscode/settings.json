@@ -1,3 +1,5 @@
 {
-  "ansible.python.interpreterPath": "c:\\Python312\\python.exe"
+  "yaml.schemas": {
+    "https://raw.githubusercontent.com/ansible/ansible-lint/main/src/ansiblelint/schemas/vars.json": "file:///home/sysadmin/offensive-kali-ansible/group_vars/kali/main.yml"
+  }
 }
