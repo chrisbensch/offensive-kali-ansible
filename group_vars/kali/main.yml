@@ -1,4 +1,9 @@
 ---
+# user_setup
+kali_user: kali
+kali_group: kali
+
+
 # common apt packages to install
 common_kali_packages:
   - assetfinder
@@ -566,7 +571,6 @@ osint_pip_install:
 
 common_python_setup:
   - { path: "/opt/certipy" }
-
 
 osint_python_setup:
 
