@@ -1,6 +1,7 @@
 ---
 # user_setup
 kali_user: kali
+kali_group: kali
 
 
 # common apt packages to install
@@ -56,6 +57,7 @@ common_kali_packages:
   - nuclei
   - obsidian
   - openssl
+  - open-vm-tools
   - osslsigncode
   - parallel
   - php
