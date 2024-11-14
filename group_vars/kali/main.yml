@@ -480,6 +480,22 @@ common_git_repos:
       dir_name: "nishang",
       repo: "https://github.com/samratashok/nishang",
     }
+  - {
+      path: "/opt",
+      dir_name: "linikatz",
+      repo: "https://github.com/Orange-Cyberdefense/LinikatzV2",
+    }
+  - {
+      path: "/opt",
+      dir_name: "graphcat",
+      repo: "https://github.com/Orange-Cyberdefense/graphcat",
+    }
+  - {
+      path: "/opt",
+      dir_name: "sikara",
+      repo: "https://github.com/Orange-Cyberdefense/sikara",
+    }
+
 
 osint_git_repos:
   - {
@@ -545,6 +561,7 @@ osint_git_repos:
 common_remotepipx_packages:
   - { name: "impacket", url: "git+https://github.com/fortra/impacket.git" }
   - { name: "KeePwn", url: "git+https://github.com/Orange-Cyberdefense/KeePwn" }
+  - { name: "pwntools", url: "git+https://github.com/Gallopsled/pwntools.git" }
 
 
 osint_pip_install:
