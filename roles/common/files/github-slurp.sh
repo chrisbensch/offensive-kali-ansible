@@ -25,15 +25,29 @@ fetch_data() {
     curl -s -H "${AUTH_HEADER}" "$url"
 }
 
+# Debugging: Print raw API response
+debug_output() {
+    echo "API Response: $1"
+}
+
 # Attempt to fetch the latest release
 LATEST_RELEASE_URL="${GITHUB_API}/repos/${OWNER}/${REPO}/releases/latest"
 RELEASE_DATA=$(fetch_data "$LATEST_RELEASE_URL")
+
+# Debugging: Show raw response
+debug_output "$RELEASE_DATA"
 
 # Handle cases where the "latest" tag is unavailable or invalid
 if [[ -z "$RELEASE_DATA" || "$(echo "$RELEASE_DATA" | jq -r '.tag_name')" == "null" ]]; then
     echo "'Latest' release not found. Falling back to fetching all releases..."
     ALL_RELEASES_URL="${GITHUB_API}/repos/${OWNER}/${REPO}/releases"
-    RELEASE_DATA=$(fetch_data "$ALL_RELEASES_URL" | jq -c '[.[] | select(.assets | length > 0)][0]')
+    RELEASE_DATA=$(fetch_data "$ALL_RELEASES_URL")
+
+    # Debugging: Show raw response for all releases
+    debug_output "$RELEASE_DATA"
+
+    # Select the first release with assets
+    RELEASE_DATA=$(echo "$RELEASE_DATA" | jq -c '[.[] | select(.assets | length > 0)][0]')
 fi
 
 # Extract the tag name
