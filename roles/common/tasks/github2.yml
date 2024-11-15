@@ -13,4 +13,6 @@
         "{{ item.repo.split('/')[0] }}"  # Extract the owner
         "{{ item.repo.split('/')[1] }}"  # Extract the repo
       loop: "{{ common_binary_packages }}"
+      loop_control:
+        label: "{{ item.repo }}"
 
