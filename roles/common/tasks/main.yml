@@ -33,7 +33,7 @@
 
 - name: Install GitHub Binary Tools
   become: True
-  ansible.builtin.import_tasks: github.yml
+  ansible.builtin.import_tasks: github2.yml
 
 - name: Install golang Tools
   become: True

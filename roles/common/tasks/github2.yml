@@ -1,0 +1,16 @@
+---
+- name: Download GitHub releases for multiple repositories
+  block:
+    - name: Ensure the script is deployed to the target system
+      copy:
+        src: "{{ role_path }}/files/github-slurp.sh"
+        dest: /usr/local/bin/github-slurp.sh
+        mode: '0755'
+
+    - name: Download latest releases for all repositories
+      command: >
+        /usr/local/bin/github-slurp.sh
+        "{{ item.repo.split('/')[0] }}"  # Extract the owner
+        "{{ item.repo.split('/')[1] }}"  # Extract the repo
+      loop: "{{ common_binary_packages }}"
+
