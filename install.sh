@@ -3,7 +3,7 @@
 
 # Qterminal seems to overwrite it's settings when closed so I do the install
 # from Xterm to ensure there are no issues.
-sudo apt -qq update && sudo apt -y -qq install ansible-core xterm
+sudo apt update > /dev/null 2>&1 && sudo apt -y install ansible-core xterm > /dev/null 2>&1
 
 # This installs the two external roles I need.
 ansible-galaxy install -r requirements.yml
