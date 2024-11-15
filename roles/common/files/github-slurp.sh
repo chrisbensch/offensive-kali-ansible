@@ -19,20 +19,27 @@ if [[ -n "$GITHUB_TOKEN" ]]; then
     AUTH_HEADER="Authorization: token ${GITHUB_TOKEN}"
 fi
 
-# Function to fetch release data
-fetch_release_data() {
+# Function to fetch data from GitHub API
+fetch_data() {
     local url="$1"
     curl -s -H "${AUTH_HEADER}" "$url"
 }
 
-# Fetch all releases and select the most recent one
-ALL_RELEASES_URL="${GITHUB_API}/repos/${OWNER}/${REPO}/releases"
-RELEASE_DATA=$(fetch_release_data "$ALL_RELEASES_URL" | jq -c '.[0]')
+# Attempt to fetch the latest release
+LATEST_RELEASE_URL="${GITHUB_API}/repos/${OWNER}/${REPO}/releases/latest"
+RELEASE_DATA=$(fetch_data "$LATEST_RELEASE_URL")
 
-# Extract release tag
+# Handle cases where the "latest" tag is unavailable or invalid
+if [[ -z "$RELEASE_DATA" || "$(echo "$RELEASE_DATA" | jq -r '.tag_name')" == "null" ]]; then
+    echo "'Latest' release not found. Falling back to fetching all releases..."
+    ALL_RELEASES_URL="${GITHUB_API}/repos/${OWNER}/${REPO}/releases"
+    RELEASE_DATA=$(fetch_data "$ALL_RELEASES_URL" | jq -c '[.[] | select(.assets | length > 0)][0]')
+fi
+
+# Extract the tag name
 TAG=$(echo "$RELEASE_DATA" | jq -r '.tag_name')
-if [[ "$TAG" == "null" ]]; then
-    echo "Error: Unable to fetch release tag. Ensure the repository exists and has releases."
+if [[ -z "$TAG" || "$TAG" == "null" ]]; then
+    echo "Error: Unable to fetch a valid release tag. Ensure the repository exists and has releases."
     exit 1
 fi
 echo "Selected release tag: $TAG"
@@ -52,7 +59,7 @@ mkdir -p "$OUTPUT_DIR"
 echo "Downloading assets to ${OUTPUT_DIR}..."
 for URL in $ASSET_URLS; do
     FILENAME=$(basename "$URL")
-    echo "Downloading $URL..."
+    echo "Downloading $FILENAME from $URL..."
     curl -L -o "$OUTPUT_DIR/$FILENAME" "$URL"
 done
 
@@ -78,4 +85,5 @@ done
 echo "Changing permissions of downloaded files to 755..."
 chmod 755 "$OUTPUT_DIR"/*
 
+# Done
 echo "All assets downloaded to ${OUTPUT_DIR}, permissions set to 755, and compressed files uncompressed."
