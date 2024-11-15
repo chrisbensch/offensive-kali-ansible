@@ -590,11 +590,11 @@ osint_go_tools:
 
 common_binary_packages:
   - { repo: "jpillora/chisel" }
-  - { repo: "carlospolop/PEASS-ng" }
+#  - { repo: "carlospolop/PEASS-ng" }
   - { repo: "WithSecureLabs/chainsaw" }
   - { repo: "BloodHoundAD/BloodHound" }
   - { repo: "michenriksen/aquatone" }
-  - { repo: "tomnomnom/assetfinder" }
+#  - { repo: "tomnomnom/assetfinder" }
   - { repo: "romkatv/gitstatus" }
   - { repo: "lkarlslund/Adalanche" }
   - { repo: "lkarlslund/ldapnomnom" }
