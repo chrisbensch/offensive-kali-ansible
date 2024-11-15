@@ -497,6 +497,11 @@ common_git_repos:
       dir_name: "sikara",
       repo: "https://github.com/Orange-Cyberdefense/sikara",
     }
+  - {
+      path: "/opt",
+      dir_name: "zipwalker",
+      repo: "https://github.com/stark4n6/ZipWalker.git"
+    }
 
 
 osint_git_repos:
@@ -602,6 +607,7 @@ common_binary_packages:
   - { repo: "dwisiswant0/go-dork" }
   - { repo: "antonioCoco/RunasCs" }
   - { repo: "antonioCoco/RemotePotato0" }
+  - { repo: "logangoins/Cable" }
   
 #  - {
 #      repo: "jpillora/chisel",
