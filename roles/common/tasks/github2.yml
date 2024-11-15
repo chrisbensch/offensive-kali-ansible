@@ -7,11 +7,12 @@
         dest: /usr/local/bin/github-slurp.sh
         mode: '0755'
 
-    - name: Download latest releases for all repositories
+    - name: Extract owner and repo and execute script
       command: >
-        /usr/local/bin/github-slurp.sh
-        "{{ item.repo.split('/')[0] }}"  # Extract the owner
-        "{{ item.repo.split('/')[1] }}"  # Extract the repo
+        /usr/local/bin/github-slurp.sh "{{ owner }}" "{{ repository }}"
+      vars:
+        owner: "{{ item.repo.split('/')[0] }}"
+        repository: "{{ item.repo.split('/')[1] }}"
       loop: "{{ common_binary_packages }}"
       loop_control:
         label: "{{ item.repo }}"
