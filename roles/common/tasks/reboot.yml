@@ -1,0 +1,7 @@
+---
+- name: Reboot System
+  block:
+    - name: Reboot the system
+      ansible.builtin.reboot:
+        reboot_timeout: 600
+      when: ansible_facts['os_family'] == 'Debian'
