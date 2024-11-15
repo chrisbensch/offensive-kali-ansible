@@ -22,12 +22,7 @@ fi
 # Function to fetch data from GitHub API
 fetch_data() {
     local url="$1"
-    curl -s -H "${AUTH_HEADER}" "$url"
-}
-
-# Debugging: Print raw API response
-debug_output() {
-    echo "API Response: $1"
+    curl -s -L -H "${AUTH_HEADER}" "$url" # Added -L to follow redirects
 }
 
 # Attempt to fetch the latest release
@@ -35,7 +30,7 @@ LATEST_RELEASE_URL="${GITHUB_API}/repos/${OWNER}/${REPO}/releases/latest"
 RELEASE_DATA=$(fetch_data "$LATEST_RELEASE_URL")
 
 # Debugging: Show raw response
-debug_output "$RELEASE_DATA"
+echo "API Response for latest release: $RELEASE_DATA"
 
 # Handle cases where the "latest" tag is unavailable or invalid
 if [[ -z "$RELEASE_DATA" || "$(echo "$RELEASE_DATA" | jq -r '.tag_name')" == "null" ]]; then
@@ -44,7 +39,7 @@ if [[ -z "$RELEASE_DATA" || "$(echo "$RELEASE_DATA" | jq -r '.tag_name')" == "nu
     RELEASE_DATA=$(fetch_data "$ALL_RELEASES_URL")
 
     # Debugging: Show raw response for all releases
-    debug_output "$RELEASE_DATA"
+    echo "API Response for all releases: $RELEASE_DATA"
 
     # Select the first release with assets
     RELEASE_DATA=$(echo "$RELEASE_DATA" | jq -c '[.[] | select(.assets | length > 0)][0]')
