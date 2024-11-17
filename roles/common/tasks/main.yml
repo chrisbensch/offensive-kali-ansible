@@ -74,7 +74,3 @@
 - name: Fix Perms
   become: True
   ansible.builtin.import_tasks: fix-perms.yml
-
-- name: Reboot after success
-  become: true
-  ansible.builtin.import_tasks: reboot.yml
