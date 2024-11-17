@@ -3,6 +3,10 @@
 - name: import vars
   ansible.builtin.include_vars: ../../group_vars/kali/main.yml
 
+- name: Disable Screen Lock
+  become: True
+  ansible.builtin.import_tasks: screenlock.yml
+
 - name: Full Upgrade
   become: True
   ansible.builtin.import_tasks: update.yml
