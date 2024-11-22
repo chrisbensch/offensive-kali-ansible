@@ -13,6 +13,7 @@
     name: "{{ item.name }}"
     source: "{{ item.url }}"
     state: latest
+    global: true
     #executable: python3
   loop: "{{ common_remotepipx_packages }}"
 
