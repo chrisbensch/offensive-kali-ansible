@@ -588,6 +588,7 @@ common_go_tools:
   - { tool: "shhgit", repo: "github.com/eth0izzle/shhgit@latest" }
   - { tool: "subjack", repo: "github.com/haccer/subjack@latest" }
   - { tool: "waybackurls", repo: "github.com/tomnomnom/waybackurls@latest" }
+  - { tool: "nmap-formatter", repo: "github.com/vdjagilev/nmap-formatter/v3@latest" }
 
 
 osint_go_tools:
