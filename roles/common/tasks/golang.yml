@@ -1,8 +1,27 @@
 ---
-# Install golang packages
-- name: Install golang tools
-  ansible.builtin.command:
-    cmd: go install "{{ item.repo }}"
-  loop: "{{ common_go_tools }}"
-  loop_control:
-    label: "{{ item.tool }}"
+- name: Setup go install environment
+  block:
+    - name: Set GOBIN environment variable in zsh
+      lineinfile:
+        path: "{{ ansible_env.HOME }}/.zshrc"
+        line: 'export GOBIN={{ ansible_env.HOME }}/go-tools/bin'
+        state: present
+
+    - name: Ensure GOBIN is in PATH for zsh
+      lineinfile:
+        path: "{{ ansible_env.HOME }}/.zshrc"
+        line: 'export PATH=$PATH:{{ ansible_env.HOME }}/go-tools/bin'
+        state: present
+      notify: Reload zsh environment
+    
+    - name: Reload zsh environment
+      shell: source ~/.zshrc
+      args:
+        executable: /bin/zsh
+
+    - name: Install golang tools
+      ansible.builtin.command:
+        cmd: go install "{{ item.repo }}"
+      loop: "{{ common_go_tools }}"
+      loop_control:
+        label: "{{ item.tool }}"
