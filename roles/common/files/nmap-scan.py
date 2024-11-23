@@ -45,6 +45,14 @@ def format_results_with_nmap_formatter(xml_file, output_dir, ip_range):
         ], check=True)
         print(f"D2 results saved as {d2_output}")
 
+        # Render D2 output to PNG
+        png_file = os.path.join(output_dir, os.path.splitext(os.path.basename(d2_output))[0] + ".png")
+        print(f"Rendering D2 file {d2_output} to PNG...")
+        subprocess.run([
+            "d2", d2_output, png_file
+        ], check=True)
+        print(f"PNG image saved as {png_file}")
+
     except subprocess.CalledProcessError as e:
         print(f"Error formatting results: {e}")
         sys.exit(1)
