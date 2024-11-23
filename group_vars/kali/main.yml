@@ -138,6 +138,7 @@ common_pipx_packages:
   - certipy-ad
   - dirhunt
   - getsploit
+  - glances
   - minikerberos
   - mitm6
   - pipenv
