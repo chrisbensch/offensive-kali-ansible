@@ -40,7 +40,7 @@
   ansible.builtin.import_tasks: github2.yml
 
 - name: Install golang Tools
-  become: True
+  become: False
   ansible.builtin.import_tasks: golang.yml
 
 - name: Customize QTerminal
