@@ -3,6 +3,10 @@
 - name: import vars
   ansible.builtin.include_vars: ../../group_vars/kali/main.yml
 
+- name: Configure ZSH Environment
+  become: False
+  ansible.builtin.import_tasks: zsh-env.yml
+
 #- name: Disable Screen Lock
 #  become: True
 #  ansible.builtin.import_tasks: screenlock.yml
@@ -62,10 +66,6 @@
 - name: Restore xfce4 panel
   become: false
   ansible.builtin.import_tasks: xfce4-panel.yml
-
-- name: Configure ZSH Environment
-  become: True
-  ansible.builtin.import_tasks: zsh-env.yml
 
 - name: Set display resolution on XFCE4
   become: True
