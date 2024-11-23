@@ -13,11 +13,6 @@
         line: 'export PATH=$PATH:{{ ansible_env.HOME }}/go-tools/bin'
         state: present
       notify: Reload zsh environment
-    
-    - name: Reload zsh environment
-      shell: source ~/.zshrc
-      args:
-        executable: /bin/zsh
 
     - name: Install golang tools
       ansible.builtin.command:
