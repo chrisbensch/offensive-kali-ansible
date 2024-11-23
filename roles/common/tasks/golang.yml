@@ -4,13 +4,13 @@
     - name: Set GOBIN environment variable in zsh
       lineinfile:
         path: "{{ ansible_env.HOME }}/.zshrc"
-        line: 'export GOBIN={{ ansible_env.HOME }}/go-tools/bin'
+        line: 'export GOBIN={{ ansible_env.HOME }}/go/bin'
         state: present
 
     - name: Ensure GOBIN is in PATH for zsh
       lineinfile:
         path: "{{ ansible_env.HOME }}/.zshrc"
-        line: 'export PATH=$PATH:{{ ansible_env.HOME }}/go-tools/bin'
+        line: 'export PATH=$PATH:{{ ansible_env.HOME }}/go/bin'
         state: present
       notify: Reload zsh environment
 
