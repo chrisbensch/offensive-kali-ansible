@@ -63,6 +63,10 @@
 #  become: True
 #  ansible.builtin.import_tasks: obsidian.yml
 
+- name: Install D2 Language
+  become: False
+  ansible.builtin.import_tasks: d2lang.yml
+
 - name: Restore xfce4 panel
   become: false
   ansible.builtin.import_tasks: xfce4-panel.yml

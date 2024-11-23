@@ -1,0 +1,8 @@
+---
+- name: Install d2
+  ansible.builtin.shell: |
+    curl -fsSL https://d2lang.com/install.sh | sh -s --
+  args:
+    executable: /bin/bash
+  register: d2_install_result
+  changed_when: "'has been successfully installed' in d2_install_result.stdout or d2_install_result.stderr"
