@@ -24,8 +24,8 @@
     - profiles.ini
 
 - name: Copy user.js from quieter-firefox
-    ansible.builtin.copy:
-      src: /opt/quieter-firefox/user.js
-      dest: "{{ firefox_default_profile_dir }}/user.js"
-      remote_src: true
+  ansible.builtin.copy:
+    src: /opt/quieter-firefox/user.js
+    dest: "{{ firefox_default_profile_dir }}/user.js"
+    remote_src: true
 

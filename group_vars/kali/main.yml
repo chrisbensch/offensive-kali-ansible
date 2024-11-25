@@ -576,7 +576,7 @@ osint_pip_install:
 
 
 common_python_setup:
-  - { path: "/opt/certipy" }
+
 
 osint_python_setup:
 
@@ -610,91 +610,6 @@ common_binary_packages:
   - { repo: "antonioCoco/RunasCs" }
   - { repo: "antonioCoco/RemotePotato0" }
   - { repo: "logangoins/Cable" }
-  
-#  - {
-#      repo: "jpillora/chisel",
-#      regex: "_linux_amd64.gz",
-#      location: "/opt/chisel"
-#    }
-#  - {
-#      repo: "jpillora/chisel",
-#      regex: "_windows_amd64.gz",
-#      location: "/opt/chisel"
-#    }
-#  - { repo: "carlospolop/PEASS-ng",
-#      regex: "linpeas.sh",
-#      location: "/opt/peas"
-#    }
-#  - {
-#      repo: "carlospolop/PEASS-ng",
-#      regex: "winPEASx64.exe",
-#      location: "/opt/peas"
-#    }
-#  - {
-#      repo: "WithSecureLabs/chainsaw",
-#      regex: "chainsaw_all_",
-#      location: "/opt/chainsaw"
-#    }
-#  - {
-#      repo: "BloodHoundAD/BloodHound",
-#      regex: "BloodHound-linux-x64.zip",
-#      location: "/opt/BloodHound"
-#    }
-#  - {
-#      repo: "michenriksen/aquatone",
-#      regex: "aquatone_linux_amd64_",
-#      location: "/opt/aquatone"
-#    }
-#  - {
-#      repo: "tomnomnom/assetfinder",
-#      regex: "assetfinder-linux-amd64",
-#      location: "/opt/assetfinder"
-#    }
-#  - {
-#      repo: "romkatv/gitstatus",
-#      regex: "linux-x86_64.tar.gz",
-#      location: "{{ kali_user }}/.cache/gitstatus/"
-#    }
-#  - {
-#      repo: "lkarlslund/Adalanche",
-#      regex: "linux-x64-",
-#      location: "/opt/adalanche"
-#    }
-#  - {
-#      repo: "lkarlslund/Adalanche",
-#      regex: "windows-x64-",
-#      location: "/opt/adalanche"
-#    }
-#  - {
-#      repo: "lkarlslund/ldapnomnom",
-#      regex: "windows-x64-obfuscated",
-#      location: "/opt/ldapnomnom"
-#    }
-#  - {
-#      repo: "lkarlslund/ldapnomnom",
-#      regex: "linux-x64-obfuscated",
-#      location: "/opt/ldapnomnom"
-#    }
-#  - {
-#      repo: "DominicBreuker/pspy",
-#      regex: "pspy64s",
-#      location: "/opt/pspy"
-#    }
-#  - {
-#      repo: "dwisiswant0/go-dork",
-#      regex: "go-dork",
-#      location: "/opt/go-dork"
-#    }
-#  - {
-#      repo: "antonioCoco/RunasCs",
-#      regex: "RunasCs.zip",
-#      location: "/opt/RunasCs"
-#    }
-#  - {
-#      repo: "antonioCoco/RemotePotato0",
-#      regex: "RemotePotato0.zip",
-#      location: "/opt/RemotePotato0"
-#    } 
 
 
 font_urls:

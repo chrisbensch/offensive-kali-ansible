@@ -1,6 +1,7 @@
 ---
 - name: Set ownership of /opt and /home/kali to kali:kali
+  become: true
   ansible.builtin.shell: |
     chown -R "{{ kali_user }}":"{{ kali_user }}" /opt
     chown -R "{{ kali_user }}":"{{ kali_user }}" /home/"{{ kali_user }}"
-  become: yes
+  
