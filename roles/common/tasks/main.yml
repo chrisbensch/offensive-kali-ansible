@@ -68,9 +68,9 @@
   become: false
   ansible.builtin.import_tasks: xfce4-panel.yml
 
-- name: Set display resolution on XFCE4
-  become: True
-  ansible.builtin.import_tasks: xfce-res.yml
+#- name: Set display resolution on XFCE4
+#  become: True
+#  ansible.builtin.import_tasks: xfce-res.yml
 
 - name: Fix Perms
   become: True
