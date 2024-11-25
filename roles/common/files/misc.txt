@@ -9,5 +9,5 @@ xset -dpms
 xfconf-query -c xfce4-screensaver -p /lock/enabled -n -t bool -s false
 
 # Disable light locker (another screen locker that might be running)
-light-locker-command -k
+light-locker-command -d
 systemctl --user mask light-locker.service

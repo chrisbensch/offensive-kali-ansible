@@ -6,18 +6,14 @@
         name: xfce4-settings
         state: present
 
-    - name: Disable screen locking
+    - name: Disable screensaver
       ansible.builtin.command: >
-        xfconf-query --channel xfce4-session --property /general/LockCommand --reset
+        xfconf-query -c xfce4-session -p /startup/screensaver/enabled -n -t bool -s false
 
-    - name: Disable screensaver lock
+    - name: Disable screen blanking and power management
       ansible.builtin.command: >
-        xfconf-query --channel xfce4-power-manager --property /xfce4-power-manager/lock-screen-suspend --set false
+        xset s off && xset -dpms
 
-    - name: Set screen lock timeout to never (optional)
+    - name: Disable screen lock
       ansible.builtin.command: >
-        xfconf-query --channel xfce4-power-manager --property /xfce4-power-manager/inactivity-on-battery --set 0
-
-    - name: Disable screen saver
-      ansible.builtin.command: >
-        xfconf-query --channel xfce4-power-manager --property /xfce4-power-manager/brightness-on-ac --set 100
+        xfconf-query -c xfce4-screensaver -p /lock/enabled -n -t bool -s false

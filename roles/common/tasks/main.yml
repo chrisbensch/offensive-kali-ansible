@@ -7,9 +7,9 @@
   become: False
   ansible.builtin.import_tasks: zsh-env.yml
 
-#- name: Disable Screen Lock
-#  become: True
-#  ansible.builtin.import_tasks: screenlock.yml
+- name: Disable Screen Lock
+  become: False
+  ansible.builtin.import_tasks: screenlock.yml
 
 - name: Full Upgrade
   become: True
