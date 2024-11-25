@@ -1,20 +1,29 @@
 ---
 - name: Disable screen lock in XFCE
   block:
-    - name: Ensure xfconf-query is installed
-      become: true
-      ansible.builtin.package:
-        name: xfce4-settings
-        state: present
-
-    - name: Disable screensaver
+    - name: Kill Light Locker
       ansible.builtin.command: >
-        xfconf-query -c xfce4-session -p /startup/screensaver/enabled -n -t bool -s false
+        pkill light-locker
+    
+    - name: Remove Light Locker
+      ansible.builtin.apt:
+        name: light-locker
+        state: absent
 
-    - name: Disable screen blanking and power management
-      ansible.builtin.command: >
-        xset s off && xset -dpms
+    #- name: Ensure xfconf-query is installed
+    #  become: true
+    #  ansible.builtin.package:
+    #    name: xfce4-settings
+    #    state: present
 
-    - name: Disable screen lock
-      ansible.builtin.command: >
-        xfconf-query -c xfce4-screensaver -p /lock/enabled -n -t bool -s false
+    # name: Disable screensaver
+    # ansible.builtin.command: >
+    #   xfconf-query -c xfce4-session -p /startup/screensaver/enabled -n -t bool -s false
+
+    #- name: Disable screen blanking and power management
+    #  ansible.builtin.command: >
+    #    xfconf-query -c xfce4-session -p /xfce4-power-manager/dpms-enabled -n -t bool -s false
+
+    #- name: Disable screen lock
+    #  ansible.builtin.command: >
+    #    xfconf-query -c xfce4-screensaver -p /lock/enabled -n -t bool -s false
