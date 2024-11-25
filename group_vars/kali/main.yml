@@ -127,8 +127,8 @@ osint_apt_packages:
   - wireshark
 
 
-# pip packages
-common_pip_packages:
+# pip packages - replaced by pipx
+#common_pip_packages:
 
 
 common_pipx_packages:
@@ -222,11 +222,6 @@ common_git_repos:
       dir_name: "krbrelayx",
       repo: "https://github.com/dirkjanm/krbrelayx.git",
     }
-#  - {
-#      path: "/opt",
-#      dir_name: "o365spray",
-#      repo: "https://github.com/hackedbyagirl/o365spray.git",
-#    }
   - {
       path: "/opt",
       dir_name: "DumpsterDiver",
@@ -242,16 +237,6 @@ common_git_repos:
       dir_name: "seclists",
       repo: "https://github.com/danielmiessler/SecLists.git",
     }
-#  - {
-#      path: "/opt",
-#      dir_name: "defaultcredsearch",
-#      repo: "https://github.com/ihebski/DefaultCreds-cheat-sheet.git",
-#    }
-#  - {
-#      path: "/opt",
-#      dir_name: "certipy",
-#      repo: "https://github.com/ly4k/Certipy.git",
-#    }
   - {
       path: "/opt",
       dir_name: "ysoserial",
@@ -262,11 +247,6 @@ common_git_repos:
       dir_name: "ysoserial.net",
       repo: "https://github.com/pwntester/ysoserial.net.git",
     }
-#  - {
-#      path: "/opt",
-#      dir_name: "droopescan",
-#      repo: "https://github.com/SamJoan/droopescan.git",
-#    }
   - {
       path: "/opt",
       dir_name: "CMSmap",
@@ -303,11 +283,6 @@ common_git_repos:
       dir_name: "ysoserial-modified",
       repo: "https://github.com/pimps/ysoserial-modified.git",
     }
-#  - {
-#      path: "/opt",
-#      dir_name: "bloodhound",
-#      repo: "https://github.com/fox-it/BloodHound.py.git",
-#    }
   - {
       path: "/opt",
       dir_name: "PCredz",
@@ -323,11 +298,6 @@ common_git_repos:
       dir_name: "PKINITtools",
       repo: "https://github.com/dirkjanm/PKINITtools",
     }
-#  - {
-#      path: "/opt",
-#      dir_name: "pywhisker",
-#      repo: "https://github.com/ShutdownRepo/pywhisker.git",
-#    }
   - {
       path: "/opt",
       dir_name: "pyWhat-pcap",
@@ -354,21 +324,11 @@ common_git_repos:
       dir_name: "LinEnum",
       repo: "https://github.com/rebootuser/LinEnum.git",
     }
-#  - {
-#      path: "/opt",
-#      dir_name: "LinuxPrivChecker",
-#      repo: "https://github.com/sleventyeleven/linuxprivchecker.git",
-#    }
   - {
       path: "/opt",
       dir_name: "SudoKiller",
       repo: "https://github.com/TH3xACE/SUDO_KILLER.git",
     }
-#  - {
-#      path: "/opt",
-#      dir_name: "Bloodhound.py",
-#      repo: "https://github.com/dirkjanm/BloodHound.py.git",
-#    }
   - {
       path: "/opt",
       dir_name: "BeRoot",
@@ -489,11 +449,6 @@ common_git_repos:
       dir_name: "linikatz",
       repo: "https://github.com/Orange-Cyberdefense/LinikatzV2",
     }
-#  - {
-#      path: "/opt",
-#      dir_name: "graphcat",
-#      repo: "https://github.com/Orange-Cyberdefense/graphcat",
-#    }
   - {
       path: "/opt",
       dir_name: "sikara",

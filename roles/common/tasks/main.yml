@@ -6,7 +6,7 @@
 - name: Disable Screen Lock
   become: True
   ansible.builtin.import_tasks: screenlock.yml
-  
+
 - name: Configure ZSH Environment
   become: False
   ansible.builtin.import_tasks: zsh-env.yml
@@ -27,7 +27,6 @@
   become: True
   ansible.builtin.import_tasks: apt.yml
 
-# TODO: Add OhMyZsh and PowerLevel10k
 - name: Set Environment Variables in .zshrc file
   become: False
   ansible.builtin.import_tasks: env.yml
