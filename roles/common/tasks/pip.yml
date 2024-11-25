@@ -3,7 +3,6 @@
   become_user: "{{ kali_user }}"
   community.general.pipx:
     name: "{{ item }}"
-    state: latest
     install_deps: true
     global: false
   loop: "{{ common_pipx_packages }}"
@@ -13,7 +12,6 @@
   community.general.pipx:
     name: "{{ item.name }}"
     source: "{{ item.url }}"
-    state: latest
     global: false
   loop: "{{ common_remotepipx_packages }}"
 
