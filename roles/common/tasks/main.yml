@@ -29,10 +29,11 @@
 
 # TODO: Add OhMyZsh and PowerLevel10k
 - name: Set Environment Variables in .zshrc file
-  become: True
+  become: False
   ansible.builtin.import_tasks: env.yml
 
 - name: Python Packages
+  become: False
   ansible.builtin.import_tasks: pip.yml
 
 - name: Install Tools from GitHub
@@ -58,10 +59,6 @@
 - name: Install GitHub CLI Client
   become: True
   ansible.builtin.import_tasks: gh-cli.yml
-
-#- name: Install Obsidian
-#  become: True
-#  ansible.builtin.import_tasks: obsidian.yml
 
 - name: Install D2 Language
   become: False

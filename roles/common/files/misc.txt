@@ -1,0 +1,13 @@
+# Disable screensaver
+xfconf-query -c xfce4-session -p /startup/screensaver/enabled -n -t bool -s false
+
+# Disable screen blanking and power management
+xset s off
+xset -dpms
+
+# Disable screen lock
+xfconf-query -c xfce4-screensaver -p /lock/enabled -n -t bool -s false
+
+# Disable light locker (another screen locker that might be running)
+light-locker-command -k
+systemctl --user mask light-locker.service

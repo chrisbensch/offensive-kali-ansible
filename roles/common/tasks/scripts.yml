@@ -1,0 +1,10 @@
+---
+- name: Copy misc scripts
+  block:
+  - name: Copy nmap script  
+    copy:
+      src: "{{ role_path }}/files/nmap-scan.py"
+      dest: "/usr/local/bin/nmap-scan.py"
+      owner: root
+      group: root
+      mode: 0755

@@ -3,18 +3,19 @@
   become_user: "{{ kali_user }}"
   community.general.pipx:
     name: "{{ item }}"
-    #state: latest
-    executable: pipx
+    state: latest
+    #executable: pipx
     install_deps: true
+    global: true
   loop: "{{ common_pipx_packages }}"
 
 - name: Install Remote pipx packages
+  become_user: "{{ kali_user }}"
   community.general.pipx:
     name: "{{ item.name }}"
     source: "{{ item.url }}"
     state: latest
     global: true
-    #executable: python3
   loop: "{{ common_remotepipx_packages }}"
 
 - name: Run pipx ensurepath and completions
