@@ -4,9 +4,8 @@
   community.general.pipx:
     name: "{{ item }}"
     state: latest
-    #executable: pipx
     install_deps: true
-    global: true
+    global: false
   loop: "{{ common_pipx_packages }}"
 
 - name: Install Remote pipx packages
@@ -15,7 +14,7 @@
     name: "{{ item.name }}"
     source: "{{ item.url }}"
     state: latest
-    global: true
+    global: false
   loop: "{{ common_remotepipx_packages }}"
 
 - name: Run pipx ensurepath and completions
