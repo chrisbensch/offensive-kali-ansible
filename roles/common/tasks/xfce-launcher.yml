@@ -21,7 +21,7 @@
           Type=Application
           Categories={{ item.categories }};
       loop: "{{ launcher_app_list }}"
-      mode: '0644'
+      #mode: '0644'
 
     - name: Add launchers to XFCE panel
       shell: |
