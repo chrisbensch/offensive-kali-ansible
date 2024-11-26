@@ -16,7 +16,7 @@
           Name={{ item.name }}
           Comment={{ item.comment }}
           Exec={{ item.exec }}
-          Icon={{ item.icon }}
+
           Terminal=false
           Type=Application
           Categories={{ item.categories }};
