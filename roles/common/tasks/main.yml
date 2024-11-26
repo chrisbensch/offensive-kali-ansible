@@ -67,6 +67,10 @@
 #  become: false
 #  ansible.builtin.import_tasks: xfce4-panel.yml
 
+- name: Create xfce4 app launcher panel
+  become: false
+  ansible.builtin.import_tasks: xfce-launcher.yml
+
 #- name: Set display resolution on XFCE4
 #  become: True
 #  ansible.builtin.import_tasks: xfce-res.yml
