@@ -2,8 +2,8 @@
 - name: Disable screen lock in XFCE
   block:
     - name: Kill Light Locker
-      ansible.builtin.command: >
-        pkill light-locker
+      ansible.builtin.shell: pkill -f light-locker
+      ignore_errors: true
     
     - name: Remove Light Locker
       ansible.builtin.apt:
