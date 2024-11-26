@@ -63,9 +63,9 @@
   become: False
   ansible.builtin.import_tasks: d2lang.yml
 
-- name: Restore xfce4 panel
-  become: false
-  ansible.builtin.import_tasks: xfce4-panel.yml
+#- name: Restore xfce4 panel
+#  become: false
+#  ansible.builtin.import_tasks: xfce4-panel.yml
 
 #- name: Set display resolution on XFCE4
 #  become: True

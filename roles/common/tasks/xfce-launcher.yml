@@ -1,0 +1,29 @@
+---
+- name: Build application launcher bar
+  block:
+    - name: Ensure launcher directory exists
+      file:
+        path: ~/.local/share/applications
+        state: directory
+        mode: '0755'
+
+    - name: Create launchers
+      copy:
+        dest: "{{ '~/.local/share/applications/' + item.name | lower + '.desktop' }}"
+        content: |
+          [Desktop Entry]
+          Version=1.0
+          Name={{ item.name }}
+          Comment={{ item.comment }}
+          Exec={{ item.exec }}
+          Icon={{ item.icon }}
+          Terminal=false
+          Type=Application
+          Categories={{ item.categories }};
+      loop: "{{ launcher_app_list }}"
+      mode: '0644'
+
+    - name: Add launchers to XFCE panel
+      shell: |
+        xfconf-query -c xfce4-panel -p /panels/panel-1/plugin-ids -a | grep 'launcher' | xargs -I {} xfconf-query -c xfce4-panel -p /plugins/plugin-{}/items -s ~/.local/share/applications/{{ item.name | lower }}.desktop
+      loop: "{{ launcher_app_list }}"

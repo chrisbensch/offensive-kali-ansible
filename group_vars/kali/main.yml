@@ -3,6 +3,39 @@
 kali_user: kali
 kali_group: kali
 
+# Building launcher bar
+launcher_app_list:
+  - name: Firefox
+    comment: Run Firefox
+    exec: /usr/bin/firefox
+    #icon: /usr/share/icons/app1.png
+    #categories: Utility
+  - name: Obsidian
+    comment: Run Obsidian
+    exec: /usr/bin/obsidian
+    #icon: /usr/share/icons/app2.png
+    #categories: Development
+  - name: VSCode
+    comment: Run VSCode
+    exec: /usr/share/code/code %F
+    #icon: /usr/share/icons/app3.png
+    #categories: Office
+  - name: Mousepad
+    comment: Run Mousepad
+    exec: /usr/bin/mousepad
+    #icon: /usr/share/icons/app4.png
+    #categories: Graphics
+  - name: Terminal
+    comment: Run Terminal
+    exec: exo-open --launch TerminalEmulator
+    #icon: /usr/share/icons/app5.png
+    #categories: Multimedia
+  - name: File Manager
+    comment: Run File Manager
+    exec: exo-open --launch FileManager %u
+    #icon: /usr/share/icons/app5.png
+    #categories: Multimedia
+
 
 # common apt packages to install
 common_kali_packages:
