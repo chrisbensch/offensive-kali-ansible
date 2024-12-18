@@ -47,7 +47,7 @@ common_kali_packages:
   - build-essential
   - chromium
   - dnsutils
-  - docker-compose
+  #- docker-compose # no longer found
   - docker.io
   - eyewitness
   - feroxbuster
