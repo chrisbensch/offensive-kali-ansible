@@ -104,7 +104,6 @@ common_kali_packages:
   - python3-full
   - python3-ldap3
   - python3-openssl
-  - python3-pipx
   - python3-setuptools
   - python3-venv
   - rust-all
