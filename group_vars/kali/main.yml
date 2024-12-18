@@ -45,6 +45,7 @@ common_kali_packages:
   - bettercap
   - bloodhound
   - build-essential
+  - certi
   - chromium
   - dnsutils
   #- docker-compose # no longer found
@@ -61,6 +62,7 @@ common_kali_packages:
   - gobuster
   - golang
   - grc
+  - hexwalk
   - jd-gui
   - joomscan
   - jq
@@ -81,6 +83,7 @@ common_kali_packages:
   - mimikatz
   - mingw-w64
   - msfpc
+  - mssqlpwner
   - nbtscan-unixwiz
   - ncat
   - neo4j
@@ -101,7 +104,7 @@ common_kali_packages:
   - python3-full
   - python3-ldap3
   - python3-openssl
-  - python3-pip
+  - python3-pipx
   - python3-setuptools
   - python3-venv
   - rust-all
@@ -113,6 +116,7 @@ common_kali_packages:
   - sublist3r
   - tk-dev
   - trufflehog
+  - xsrfprobe
   - xz-utils
   - zlib1g-dev
   - zsh
