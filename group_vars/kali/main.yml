@@ -565,6 +565,7 @@ common_remotepipx_packages:
   - { name: "defaultcredsearch", url: "git+https://github.com/ihebski/DefaultCreds-cheat-sheet.git" }
   - { name: "cmsmap", url: "git+https://github.com/dionach/CMSmap.git" }
   - { name: "graphcat", url: "git+https://github.com/Orange-Cyberdefense/graphcat.git" }
+  - { name: "smbclient-ng", url: "git+https://github.com/p0dalirius/smbclient-ng.git" }
 
 
 osint_pip_install:
