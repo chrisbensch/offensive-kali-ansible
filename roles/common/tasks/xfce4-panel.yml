@@ -6,10 +6,11 @@
   #    state: directory
   #    mode: '0755'
 
-  - name: Remove all files in the target directory
-    file:
-      path: "{{ ansible_env.HOME }}/.config/xfce4"
-      state: absent
+  - name: Backup XFCE4 
+    #file:
+    #  path: "{{ ansible_env.HOME }}/.config/xfce4"
+    #  state: absent
+    ansible.builtin.shell: mv "{{ ansible_env.HOME }}/.config/xfce4" "{{ ansible_env.HOME }}/.config/xfce4.bak"
   
   - name: Untar xfce4 panel files
     unarchive:
