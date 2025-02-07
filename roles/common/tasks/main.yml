@@ -11,6 +11,10 @@
   become: False
   ansible.builtin.import_tasks: zsh-env.yml
 
+- name: Configure apt-cache-ng
+  become: true
+  ansible.builtin.import_tasks: apt-cache.yml
+
 - name: Full Upgrade
   become: True
   ansible.builtin.import_tasks: update.yml
