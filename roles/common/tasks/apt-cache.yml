@@ -1,0 +1,19 @@
+---
+- name: Configure apt to use apt-cache-ng
+  block:
+  - name: Backup the original apt sources.list
+    copy:
+      src: /etc/apt/sources.list
+      dest: /etc/apt/sources.list.bak
+      remote_src: yes
+      force: no
+
+  - name: Configure apt to use apt-cache-ng
+    lineinfile:
+      path: /etc/apt/apt.conf.d/01proxy
+      line: 'Acquire::http::Proxy "http://10.10.10.38:3142";'
+      create: yes
+
+  - name: Update apt cache
+    ansible.builtin.apt:
+      update_cache: yes
