@@ -1,27 +1,28 @@
 ---
-- name: Install required packages
-  apt:
-    name:
-      - apt-transport-https
-      - software-properties-common
-    state: present
+# ChatGPT helped
+- name: Ensure the /etc/apt/keyrings directory exists with correct permissions
+  ansible.builtin.file:
+    path: /etc/apt/keyrings
+    state: directory
+    mode: '0755'
 
-- name: Import GitHub CLI GPG key
-  ansible.builtin.apt_key:
+- name: Download the GitHub CLI GPG key and save it to /etc/apt/keyrings
+  ansible.builtin.get_url:
     url: https://cli.github.com/packages/githubcli-archive-keyring.gpg
-    state: present
+    dest: /etc/apt/keyrings/githubcli-archive-keyring.gpg
+    mode: '0644'
 
-- name: Add GitHub CLI repository
+- name: Add the GitHub CLI repository to sources list
   ansible.builtin.apt_repository:
-    repo: "deb [arch=amd64] https://cli.github.com/packages stable main"
-    state: present
-    filename: "github-cli"
+    repo: "deb [signed-by=/etc/apt/keyrings/githubcli-archive-keyring.gpg] https://cli.github.com/packages stable main"
+    filename: github-cli
 
-- name: Update APT package index
+- name: Update the apt cache
   ansible.builtin.apt:
     update_cache: yes
 
 - name: Install GitHub CLI
-  apt:
+  ansible.builtin.apt:
     name: gh
     state: present
+    update_cache: yes

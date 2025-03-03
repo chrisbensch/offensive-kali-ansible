@@ -1,17 +1,17 @@
 ---
-# Downloading and setting up git repos
+- name: Find git repos in /opt
+  ansible.builtin.find:
+    paths: "/opt"
+    file_type: directory
+    patterns: ".git"
+    recurse: yes
+  register: git_dirs
 
-- name: Install tools from github and set permissions
-  block:
-    - name: Create a directory for each tool to be installed
-      ansible.builtin.file:
-        group: "{{ group }}"
-        mode: 0755
-        path: "{{ item.path }}/{{ item.dir_name }}"
-        state: directory
-      loop: "{{ common_git_repos }}"
-      loop_control:
-        label: "{{ item.dir_name }}"
+- name: Reset and Clean all found git repos in /opt
+  ansible.builtin.shell: cd {{ item }} && git reset --hard && git clean -fdx
+  loop: "{{ git_dirs.files | map(attribute='path') | map('dirname') | unique }}"
+  loop_control:
+    loop_var: item
 
 - name: Install github tools
   block:
@@ -20,35 +20,29 @@
         repo: "{{ item.repo }}"
         dest: "{{ item.path }}/{{ item.dir_name }}"
         force: true
+        track_submodules: yes
       loop: "{{ common_git_repos }}"
       loop_control:
         label: "{{ item.repo }}"
 
-- name: Set new file privileges -- recursive
-  ansible.builtin.file:
-    owner: "{{ group }}"
-    path: "{{ item.path }}/{{ item.dir_name }}"
-    mode: 0755
-    recurse: yes
-  loop: "{{ common_git_repos }}"
-  loop_control:
-    label: "{{ item.repo }}"
+#- name: Set new file privileges -- recursive
+#  ansible.builtin.file:
+#    owner: "{{ group }}"
+#    path: "{{ item.path }}/{{ item.dir_name }}"
+#    mode: 0755
+#    recurse: yes
+#    follow: no
+#  loop: "{{ common_git_repos }}"
+#  loop_control:
+#    label: "{{ item.repo }}"
 
 # Install Package dependencies
-- name: Install package dependencies
-  block:
-    #- name: Setup python packages for required git repos
-    #  ansible.builtin.command: python3 setup.py install
-    #  args:
-    #    chdir: "{{item.path}}"
-    #  loop: "{{common_python_setup}}"
-    #  loop_control:
-    #    label: "{{item.path}}"
-
-    - name: Install pip dependencies for required git repos
-      ansible.builtin.command: python3 -m pip install -r requirements.txt
-      args:
-        chdir: "{{item.path}}"
-      loop: "{{common_pip_install}}"
-      loop_control:
-        label: "{item.path}"
+#- name: Install package dependencies
+#  block:
+#    - name: Setup python packages for required git repos
+#      ansible.builtin.command: python3 setup.py install
+#      args:
+#        chdir: "{{item.path}}"
+#      loop: "{{common_python_setup}}"
+#      loop_control:
+#        label: "{{item.path}}"
