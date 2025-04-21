@@ -181,6 +181,7 @@ common_pipx_packages:
   - mitm6
   - pipenv
   - poetry
+  - pyarmor
   - pypykatz
   - python-libpcap
   - pywhat
@@ -238,6 +239,16 @@ osint_gem_packages:
 
 # Common Role git repos
 common_git_repos:
+  - {
+      path: "/opt",
+      dir_name: "obfuotreme",
+      repo: "https://github.com/spyboy-productions/ObfuXtreme.git",
+    }
+  - {
+      path: "/opt",
+      dir_name: "Clematis",
+      repo: "https://github.com/CBLabresearch/clematis.git",
+    }
   - {
       path: "/opt",
       dir_name: "ntlm_theft",
@@ -452,11 +463,6 @@ common_git_repos:
     }
   - {
       path: "/opt",
-      dir_name: "scarecrow",
-      repo: "https://github.com/Tylous/ScareCrow",
-    }
-  - {
-      path: "/opt",
       dir_name: "ps2exe",
       repo: "https://github.com/MScholtes/PS2EXE",
     }
@@ -566,6 +572,7 @@ common_remotepipx_packages:
   - { name: "cmsmap", url: "git+https://github.com/dionach/CMSmap.git" }
   - { name: "graphcat", url: "git+https://github.com/Orange-Cyberdefense/graphcat.git" }
   - { name: "smbclient-ng", url: "git+https://github.com/p0dalirius/smbclient-ng.git" }
+  - { name: "nuitka", url: "git+https://github.com/Nuitka/Nuitka.git" }
 
 
 osint_pip_install:
@@ -606,6 +613,8 @@ common_binary_packages:
   - { repo: "antonioCoco/RunasCs" }
   - { repo: "antonioCoco/RemotePotato0" }
   - { repo: "logangoins/Cable" }
+  - { repo: "ttpreport/ligolo-mp" }
+  - { repo: "nicocha30/ligolo-ng" }
 
 
 font_urls:
