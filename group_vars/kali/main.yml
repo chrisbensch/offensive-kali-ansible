@@ -89,7 +89,7 @@ common_kali_packages:
   - neo4j
   - netexec
   - npm
-  - ntpdate
+  - ntpsec-ntpdate
   - nuclei
   - obsidian
   - openssl
