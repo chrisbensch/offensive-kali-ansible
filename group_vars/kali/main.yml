@@ -593,7 +593,7 @@ common_go_tools:
   - { tool: "subjack", repo: "github.com/haccer/subjack@latest" }
   - { tool: "waybackurls", repo: "github.com/tomnomnom/waybackurls@latest" }
   - { tool: "nmap-formatter", repo: "github.com/vdjagilev/nmap-formatter/v3@latest" }
-  - { tool: "psobf", repo: "github.com/TaurusOmar/psobf@latest" }
+  - { tool: "psobf", repo: "github.com/TaurusOmar/psobf/cmd/psobf@latest" }
 
 
 osint_go_tools:
