@@ -63,9 +63,9 @@
   become: True
   ansible.builtin.import_tasks: gh-cli.yml
 
-- name: Install D2 Language
-  become: False
-  ansible.builtin.import_tasks: d2lang.yml
+#- name: Install D2 Language
+#  become: False
+#  ansible.builtin.import_tasks: d2lang.yml
 
 - name: Restore xfce4 panel
   become: false
