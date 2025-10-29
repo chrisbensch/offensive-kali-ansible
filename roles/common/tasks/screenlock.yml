@@ -9,7 +9,6 @@
       ansible.builtin.apt:
         name: light-locker
         state: absent
-        ignore_errors: true
 
     #- name: Ensure xfconf-query is installed
     #  become: true
