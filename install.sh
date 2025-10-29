@@ -9,5 +9,5 @@ sudo apt update > /dev/null 2>&1 && sudo apt -y install ansible-core xterm > /de
 ansible-galaxy install -r requirements.yml
 
 # git pulls the most current changes and begins playbook
-clear && git pull && ansible-playbook -i ansible/local.ini site.yml
+clear && git pull && ansible-playbook -K -i ansible/local.ini site.yml
 #ansible-playbook -K -i ansible/local.ini site.yml
