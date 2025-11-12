@@ -55,9 +55,9 @@
   become: False
   ansible.builtin.import_tasks: qterminal.yml
 
-#- name: Install and Configure VSCode
-#  become: True
-#  ansible.builtin.import_tasks: vscode.yml
+- name: Install and Configure VSCode
+  become: True
+  ansible.builtin.import_tasks: vscode.yml
 
 - name: Install GitHub CLI Client
   become: True
