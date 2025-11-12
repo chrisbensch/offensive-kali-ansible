@@ -1,11 +1,6 @@
 ---
 - name: Update and upgrade Debian-based system
   block:
-    - name: Remove unused packages and their dependencies
-      ansible.builtin.apt:
-        autoremove: true
-        autoclean: true
-        
     - name: Update apt repo and cache on all Debian/Ubuntu boxes
       ansible.builtin.apt:
         update_cache: true
@@ -13,8 +8,8 @@
 
     - name: Upgrade all packages to the latest version
       ansible.builtin.apt:
-        upgrade: dist
-
+        name: '*'
+        state: latest
     - name: Remove unused packages and their dependencies
       ansible.builtin.apt:
         autoremove: true
