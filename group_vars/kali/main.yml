@@ -604,6 +604,7 @@ common_uv_tools:
   - python-libpcap
   - pywhat
   - pywhisker
+  - smbclientng
   #- requests
   - updog
 
