@@ -87,7 +87,7 @@ common_kali_packages:
   - nbtscan-unixwiz
   - ncat
   - neo4j
-  - netexec
+  #- netexec
   - npm
   - ntpsec-ntpdate
   - nuclei
@@ -97,7 +97,7 @@ common_kali_packages:
   - osslsigncode
   - parallel
   - php
-  - pipx
+  #- pipx
   - powershell-empire
   - putty-tools
   - python3-dev
