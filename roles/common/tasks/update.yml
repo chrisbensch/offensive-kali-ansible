@@ -9,7 +9,6 @@
     - name: Upgrade all packages to the latest version
       ansible.builtin.apt:
         upgrade: dist
-        update_cache: yes
         environment:
           DEBIAN_FRONTEND: noninteractive
 
