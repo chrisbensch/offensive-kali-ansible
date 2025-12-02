@@ -5,26 +5,26 @@
     users:
       - username: "{{ kali_user }}"
         visual_studio_code_extensions:
-          - IronGeek.vscode-env
-          - Tyriar.sort-lines
+          #- IronGeek.vscode-env
+          #- Tyriar.sort-lines
           - donjayamanne.githistory
           - eamodio.gitlens
           - esbenp.prettier-vscode
           - foxundermoon.shell-format
-          - junstyle.php-cs-fixer
+          #- junstyle.php-cs-fixer
           - marduc812.nmap-peek
           - mechatroner.rainbow-csv
           - mhutchie.git-graph
           - ms-python.python
-          - ms-python.vscode-pylance
-          - ms-vscode.cpptools
+          #- ms-python.vscode-pylance
+          #- ms-vscode.cpptools
           - ms-vscode.powershell
           - redhat.ansible
           - redhat.vscode-yaml
           - shakram02.bash-beautify
           - wesbos.theme-cobalt2
           - xshrim.txt-syntax
-          - zobo.php-intellisense
+          #- zobo.php-intellisense
 
 - name: Write data to a file
   ansible.builtin.copy:
