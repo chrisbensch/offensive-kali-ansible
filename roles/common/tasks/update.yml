@@ -9,8 +9,6 @@
     - name: Upgrade all packages to the latest version
       ansible.builtin.apt:
         upgrade: dist
-        environment:
-          DEBIAN_FRONTEND: noninteractive
 
     - name: Remove unused packages and their dependencies
       ansible.builtin.apt:
