@@ -20,7 +20,7 @@
           #- ms-vscode.cpptools
           - ms-vscode.powershell
           - redhat.ansible
-          - redhat.vscode-yaml
+          #- redhat.vscode-yaml
           - shakram02.bash-beautify
           - wesbos.theme-cobalt2
           - xshrim.txt-syntax
