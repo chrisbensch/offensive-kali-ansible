@@ -39,7 +39,11 @@
 #  become: False
 #  ansible.builtin.import_tasks: pip.yml
 
-- name: uv tool Packages
+- name: Install uv
+  become: False
+  ansible.builtin.import_tasks: uv-install.yml
+
+- name: Install uv tool Packages
   become: False
   ansible.builtin.import_tasks: uv.yml
 

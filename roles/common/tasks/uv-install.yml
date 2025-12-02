@@ -1,0 +1,18 @@
+- name: Install uv on Kali
+  block:
+    - name: Check if uv is already installed
+      command: which uv
+      register: uv_check
+      failed_when: false
+      changed_when: false
+
+    - name: Download and install uv
+      shell: curl -LsSf https://astral.sh/uv/install.sh | sh
+      args:
+        creates: "{{ ansible_env.HOME }}/.local/bin/uv"
+      when: uv_check.rc != 0
+
+    - name: Ensure uv is in PATH for current session
+      set_fact:
+        ansible_env: "{{ ansible_env | combine({'PATH': ansible_env.HOME + '/.local/bin:' + ansible_env.PATH}) }}"
+      when: uv_check.rc != 0
