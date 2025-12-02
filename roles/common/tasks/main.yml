@@ -35,9 +35,13 @@
   become: False
   ansible.builtin.import_tasks: env.yml
 
-- name: Python Packages
+#- name: Python Packages
+#  become: False
+#  ansible.builtin.import_tasks: pip.yml
+
+- name: uv tool Packages
   become: False
-  ansible.builtin.import_tasks: pip.yml
+  ansible.builtin.import_tasks: uv.yml
 
 - name: Install Tools from GitHub
   become: True

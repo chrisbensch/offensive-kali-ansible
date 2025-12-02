@@ -1,0 +1,18 @@
+---
+- name: Install uv packages
+  become_user: "{{ kali_user }}"
+  moreati.uv.pip:
+    name: "{{ item }}"
+  loop: "{{ common_uv_tools }}"
+
+#- name: Install Remote pipx packages
+#  become_user: "{{ kali_user }}"
+#  moreati.uv.pip:
+#    name: "{{ item.name }}"
+#  loop: "{{ common_remote_uv_tools }}"
+
+#- name: Run pipx ensurepath and completions
+#  become_user: "{{ kali_user }}"
+#  ansible.builtin.shell: pipx ensurepath && pipx completions
+#  args:
+#    executable: /bin/zsh
