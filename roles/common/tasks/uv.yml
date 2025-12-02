@@ -1,13 +1,13 @@
 ---
-#- name: Install uv packages
-#  become_user: "{{ kali_user }}"
-#  moreati.uv.pip:
-#    name: "{{ item }}"
-#  loop: "{{ common_uv_tools }}"
-
 - name: Install uv packages
-  command: uv tool install {{ item }}
+  become_user: "{{ kali_user }}"
+  moreati.uv:
+    name: "{{ item }}"
   loop: "{{ common_uv_tools }}"
+
+#- name: Install uv packages
+#  command: uv tool install {{ item }}
+#  loop: "{{ common_uv_tools }}"
 
 #- name: Install Remote pipx packages
 #  become_user: "{{ kali_user }}"
