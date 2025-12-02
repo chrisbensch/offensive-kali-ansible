@@ -604,7 +604,7 @@ common_uv_tools:
   - python-libpcap
   - pywhat
   - pywhisker
-  - requests
+  #- requests
   - updog
 
 
