@@ -15,6 +15,10 @@
   become: true
   ansible.builtin.import_tasks: apt-cache.yml
 
+- name: Configure git-cacher
+  become: true
+  ansible.builtin.import_tasks: git-cache.yml
+
 - name: Full Upgrade
   become: True
   ansible.builtin.import_tasks: update.yml

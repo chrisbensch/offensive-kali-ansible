@@ -1,0 +1,7 @@
+- name: Set up git URL rewrite for proxy
+  tasks:
+    - name: Configure git to use proxy for https URLs
+      community.general.git_config:
+        name: 'url.http://10.10.10.38:8080/.insteadOf'
+        value: 'https://'
+        scope: system  # Use 'system' for system-wide, 'global' for user-wide
