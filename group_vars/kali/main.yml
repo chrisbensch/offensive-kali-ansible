@@ -40,15 +40,13 @@ launcher_app_list:
 # common apt packages to install
 common_kali_packages:
   - assetfinder
-  - autorecon
   - awscli
   - bettercap
-  - bloodhound
   - build-essential
   - certi
   - chromium
   - dnsutils
-  #- docker-compose # no longer found
+  - docker-compose
   - docker.io
   - eyewitness
   - feroxbuster
@@ -66,7 +64,7 @@ common_kali_packages:
   - jd-gui
   - joomscan
   - jq
-  - keepassxc
+  - keepass2
   - libbz2-dev
   - libffi-dev
   - libguestfs-tools
@@ -87,7 +85,6 @@ common_kali_packages:
   - nbtscan-unixwiz
   - ncat
   - neo4j
-  #- netexec
   - npm
   - ntpsec-ntpdate
   - nuclei
@@ -97,7 +94,6 @@ common_kali_packages:
   - osslsigncode
   - parallel
   - php
-  #- pipx
   - powershell-empire
   - putty-tools
   - python3-dev
@@ -568,15 +564,15 @@ osint_git_repos:
 #common_pip_install:
 #  - { path: "/opt/jwt_tool" }
 
-common_remotepipx_packages:
-  - { name: "impacket", url: "git+https://github.com/fortra/impacket.git" }
-  - { name: "KeePwn", url: "git+https://github.com/Orange-Cyberdefense/KeePwn" }
-  - { name: "pwntools", url: "git+https://github.com/Gallopsled/pwntools.git" }
-  - { name: "defaultcredsearch", url: "git+https://github.com/ihebski/DefaultCreds-cheat-sheet.git" }
-  - { name: "cmsmap", url: "git+https://github.com/dionach/CMSmap.git" }
-  - { name: "graphcat", url: "git+https://github.com/Orange-Cyberdefense/graphcat.git" }
-  - { name: "smbclient-ng", url: "git+https://github.com/p0dalirius/smbclient-ng.git" }
-  - { name: "nuitka", url: "git+https://github.com/Nuitka/Nuitka.git" }
+#common_remotepipx_packages:
+#  - { name: "impacket", url: "git+https://github.com/fortra/impacket.git" }
+#  - { name: "KeePwn", url: "git+https://github.com/Orange-Cyberdefense/KeePwn" }
+#  - { name: "pwntools", url: "git+https://github.com/Gallopsled/pwntools.git" }
+#  - { name: "defaultcredsearch", url: "git+https://github.com/ihebski/DefaultCreds-cheat-sheet.git" }
+#  - { name: "cmsmap", url: "git+https://github.com/dionach/CMSmap.git" }
+#  - { name: "graphcat", url: "git+https://github.com/Orange-Cyberdefense/graphcat.git" }
+#  - { name: "smbclient-ng", url: "git+https://github.com/p0dalirius/smbclient-ng.git" }
+#  - { name: "nuitka", url: "git+https://github.com/Nuitka/Nuitka.git" }
 
 common_remote_uv_tools:
   - { name: "impacket", url: "git+https://github.com/fortra/impacket.git" }
@@ -586,11 +582,13 @@ common_remote_uv_tools:
   - { name: "cmsmap", url: "git+https://github.com/dionach/CMSmap.git" }
   - { name: "graphcat", url: "git+https://github.com/Orange-Cyberdefense/graphcat.git" }
   - { name: "nuitka", url: "git+https://github.com/Nuitka/Nuitka.git" }
+  - { name: "autorecon", url: "https://github.com/AutoRecon/AutoRecon" }
 
 
 common_uv_tools:
   - coercer
   - bloodyAD
+  - bloodhound
   - Cython
   - certipy-ad
   - dirhunt
