@@ -582,7 +582,7 @@ common_remote_uv_tools:
   - { name: "cmsmap", url: "git+https://github.com/dionach/CMSmap.git" }
   - { name: "graphcat", url: "git+https://github.com/Orange-Cyberdefense/graphcat.git" }
   - { name: "nuitka", url: "git+https://github.com/Nuitka/Nuitka.git" }
-  - { name: "autorecon", url: "https://github.com/AutoRecon/AutoRecon" }
+  - { name: "autorecon", url: "git+https://github.com/AutoRecon/AutoRecon" }
 
 
 common_uv_tools:
